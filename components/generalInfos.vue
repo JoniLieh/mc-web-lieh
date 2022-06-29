@@ -53,13 +53,14 @@ export default {
             'Skills, Leveling und Super Fähigkeiten!',
             'Es gibt eine Kreativ-Welt, wo ihr euch austoben könnt :)',
             'Für Whitelist, bitte mich anschreiben!',
-            'Interaktive Live Karte',
+            'Interaktive Live Karte'
           ]
         }, {
           heading: 'Stand 01.07.2022',
           list: [
             'Wither nicht getötet',
             'Enderdrache nicht getötet',
+            'Neueste Minecraft-Version(1.19)'
           ],
           isUl: true
         }, {
@@ -70,6 +71,12 @@ export default {
             'WorldEdit',
             'WorldGuard',
           ]
+        }, {
+          heading: 'Nützliches',
+          list: [
+            '<a href="https://minecraft.fandom.com/de/wiki/Minecraft_Wiki" target="_blank">Minecraft Wiki</a>',
+          ],
+          isUl: true
         }
       ]
     }

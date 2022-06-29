@@ -35,6 +35,9 @@
   </div>
 </template>
 
+* minecraft version
+* Karte aktualisiert sich alle 24h
+
 <script type="ts">
 export default {
   name: "ExtrasComponent",

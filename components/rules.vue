@@ -4,8 +4,8 @@
     <v-list color="transparent" dense>
       <v-list-item v-for="(rule, ruleIndex) in rules" :key="ruleIndex" class="success--text text--darken-1" link>
         <v-list-item-icon>
-          <v-icon color="primary">
-            mdi-chevron-right
+          <v-icon color="primary" small>
+            mdi-star
           </v-icon>
         </v-list-item-icon>
         <v-list-item-content>
