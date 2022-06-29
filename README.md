@@ -1,5 +1,7 @@
 # mc-web-lieh
 
+Public Webpage to join the minecraft server
+
 ## Build Setup
 
 ```bash
