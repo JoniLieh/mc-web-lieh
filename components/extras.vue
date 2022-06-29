@@ -12,7 +12,9 @@
       </a>
     </v-subheader>
     <v-subheader class="font-italic">
-      Für einfache Installation: die Mods lassen sich auch mit einem Mod-Loader installieren
+      Für einfache Installation: Mods lassen sich auch einfach mit einem Mod-Loader zB.:
+      <a class="mx-1" href="https://multimc.org/" target="_blank">MultiMC</a>
+      installieren
     </v-subheader>
 
     <section v-for="({ title, infos, tasks, subtitle }, index) in extraItems" :key="index" class="mt-6">
