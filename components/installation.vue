@@ -2,7 +2,7 @@
   <div>
     <slot />
     <v-alert type="info" text dense>
-      Minecraft könnt ihr auch regulär im Laden kaufen, hier gibt es die online Anleitung.
+      Minecraft könnt ihr auch regulär im Laden kaufen, hier gibt es die Online-Anleitung.
     </v-alert>
     
     <v-list color="transparent" dense>

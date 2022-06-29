@@ -23,7 +23,10 @@
           <v-list v-else dense>
             <v-list-item v-for="(listItem, itemIndex) in item.list" :key="itemIndex+1*100">
               <v-list-item-icon class="text-right">
-                {{ itemIndex+1 }}
+                <v-icon v-if="item.isUl">mdi-circle-small</v-icon>
+                <span v-else>
+                  {{ itemIndex+1 }}
+                </span>
               </v-list-item-icon>
               <v-list-item-content class="d-block" v-html="listItem"></v-list-item-content>
             </v-list-item>
@@ -47,10 +50,18 @@ export default {
         }, {
           heading: 'Besonderes',
           list: [
-            'Skills, Leveling und Super Powers!',
+            'Skills, Leveling und Super Fähigkeiten!',
             'Es gibt eine Kreativ-Welt, wo ihr euch austoben könnt :)',
-            'Für Whitelist, bitte mich anschreiben!'
+            'Für Whitelist, bitte mich anschreiben!',
+            'Interaktive Live Karte',
           ]
+        }, {
+          heading: 'Stand 01.07.2022',
+          list: [
+            'Wither nicht getötet',
+            'Enderdrache nicht getötet',
+          ],
+          isUl: true
         }, {
           heading: 'Plugins',
           list: [

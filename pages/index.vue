@@ -21,7 +21,7 @@
 
           <v-list-item-title>
             <client-only>
-              <a :href="item.link" v-text="item.heading"></a>
+              <a :href="item.link" v-text="item.headingStructure || item.heading"></a>
             </client-only>
           </v-list-item-title>
         </v-list-item>
@@ -31,7 +31,7 @@
       <v-divider class="my-4" />
       <component :is="item.component">
         <h4 :id="item.link.replace('#','')" class="display-1 d-flex my-4">
-          {{ item.heading }}
+          <span v-html="item.heading" />
           <v-spacer />
           <v-spacer />
           <v-icon x-large>
@@ -50,6 +50,7 @@ import InstallationComponent from '~/components/installation.vue'
 import JoinComponent from '~/components/join.vue'
 import GeneralInfosComponent from '~/components/generalInfos.vue'
 import ExtraComponent from '~/components/extras.vue'
+import MapComponent from '~/components/map.vue'
 export default {
   name: 'IndexPage',
 
@@ -59,7 +60,8 @@ export default {
     RulesComponent,
     JoinComponent,
     GeneralInfosComponent,
-    ExtraComponent
+    ExtraComponent,
+    MapComponent
   },
 
   data: () => ({
@@ -69,6 +71,12 @@ export default {
         headingIcon: 'mdi-information-outline',
         link: '#generalinfos',
         component: GeneralInfosComponent
+      }, {
+        headingStructure: 'Interaktive Karte',
+        heading: 'Interaktive Karte <i aria-hidden="true" class="v-icon notranslate mdi mdi-open-in-new primary--text" style="font-size: 32px;"></i>',
+        headingIcon: 'mdi-map-outline',
+        link: '#generalinfos',
+        component: MapComponent
       }, {
         heading: 'Fragen',
         headingIcon: 'mdi-frequently-asked-questions',

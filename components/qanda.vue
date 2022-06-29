@@ -39,7 +39,7 @@ export default {
           answer: 'Minecraft kannst unter folgendem Link kaufen: <a href="https://www.minecraft.net/de-de/get-minecraft">https://www.minecraft.net/de-de/get-minecraft</a>'
         }, {
           question: 'Gibt es Regeln?',
-          answer: 'Ja, schau im Regel-Tab nach'
+          answer: 'Ja, schaut im Regel-Abschnitt nach'
         }, {
           question: 'Was ist eine Whitelist?',
           answer: 'Der Minecraft-Server hat eingeschränkten Zugriff, nur Leute, auf der Liste dürfen auch auf den Server.'

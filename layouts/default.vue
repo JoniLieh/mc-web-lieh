@@ -58,7 +58,9 @@ export default {
       x: window.innerWidth,
       y: window.innerHeight
     }
-    this.$vuetify.theme.dark = window.matchMedia('(prefers-color-scheme: dark)').matches
+    setTimeout(() => {
+      this.$vuetify.theme.dark = window.matchMedia('(prefers-color-scheme: dark)').matches
+    }, 100)
   },
 
   methods: {

@@ -32,7 +32,8 @@ export default {
       'Industrielle Bauten bitte verschönern bspw. Mobfarmen',
       'keine Verwendung von Hack Clients oder das Ausnutzen von Glitches / Bugs',
       'Die Serverleitung übernimmt keine Haftung für von Spielern begangene Taten',
-      'Verstoß gegen die Regeln kann zum Serverauschluss führen'
+      'Verstoß gegen die Regeln kann zum Serverauschluss führen',
+      'Bosse bitte gemeinsam töten(als Event)',
     ]
   })
 }
