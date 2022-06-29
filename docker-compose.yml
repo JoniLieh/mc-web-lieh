@@ -1,0 +1,10 @@
+version: "3.7"
+
+services:
+
+
+# frontend stuff
+  frontend:
+    build: .                             # use Dockerfile in react_frontend dir
+    container_name: frontend_mc_web_lieh
+    restart: on-failure:5
