@@ -67,7 +67,7 @@ export default {
             "Unterschiedlichste Shader möglich",
             'Es gibt auch bereits&nbsp;<a href="https://minecraft.fandom.com/de/wiki/Shader" target="_blank">nativ integrierte Shader</a>',
           ],
-          subtitle: "Voraussetzung: Optifine",
+          subtitle: "Voraussetzung: Optifine oder Iris",
           tasks: [
             'Gewünschtes&nbsp;<a href="https://shaders.fandom.com/wiki/Shader_Packs" target="_blank">Shaderpack herunterladen</a> (<b>Empfehlung</b>: <a href="https://www.sonicether.com/seus/" target="_blank">SEUS Renewed</a> ; auch hier wieder aufpassen, auf keine falschen Links klicken)',
             `Die heruntergeladene Datei unter <a @click="copyText('%appdata%\\.minecraft\\shaderpacks')">
@@ -76,7 +76,7 @@ export default {
             'Unter Minecraft-Einstellungen&nbsp;<i class="v-icon mdi mdi-arrow-right" style="font-size: 16px;"></i>&nbsp;Video Settings&nbsp;<i class="v-icon mdi mdi-arrow-right" style="font-size: 16px;"></i>&nbsp;Shaders, den Shader auswählen',
           ],
         }, {
-          title: "Texturenpaketen-Installation",
+          title: "Texturenpaket-Installation",
           type: "resourcepack",
           infos: [
             '<span class="error--text">Verringert die Bildrate (FPS) im Spiel!</span>',
@@ -95,6 +95,21 @@ export default {
           (Oder unter Minecraft-Einstellungen&nbsp;<i class="v-icon mdi mdi-arrow-right" style="font-size: 16px;"></i>&nbsp;Resource Packs&nbsp;<i class="v-icon mdi mdi-arrow-right" style="font-size: 16px;"></i>&nbsp;Open Resource Pack Folder)
           `,
             'Unter Minecraft-Einstellungen&nbsp;<i class="v-icon mdi mdi-arrow-right" style="font-size: 16px;"></i>&nbsp;Resource Packs, das Resource Pack auswählen',
+          ]
+        }, {
+          title: "Shader Schnellinstallation ",
+          infos: [
+            '<span class="success--text">Da Optifine auf der 1.19 derzeit noch keinen Shader unterstützt, hier eine Alternative</span>'
+          ],
+          subtitle:
+            "Hier wird auf Iris anstatt Optifine gesetzt",
+          tasks: [
+            `<a href="https://irisshaders.net/download" target="_blank">Iris Shaders</a> → "Universelle Jar herunterladen"`,
+            `<a href="https://bitslablab.com/bslshaders/#download" target="_blank">BSL Shaders</a> → "Download BSL v8.x.x"`,
+            `BSL Shaders-Datei in .minecraft\\shaderpacks legen`,
+            `Starte Minecraft`,
+            `Öffne Options, Video Settings, Shaders`,
+            `Lege "BSL Shaders" fest`
           ]
         }
       ]

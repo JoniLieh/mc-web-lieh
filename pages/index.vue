@@ -75,7 +75,7 @@ export default {
         headingStructure: 'Interaktive Karte',
         heading: 'Interaktive Karte <i aria-hidden="true" class="v-icon notranslate mdi mdi-open-in-new primary--text" style="font-size: 32px;"></i>',
         headingIcon: 'mdi-map-outline',
-        link: '#generalinfos',
+        link: '#map',
         component: MapComponent
       }, {
         heading: 'Fragen',

@@ -66,7 +66,7 @@ export default {
         }, {
           heading: 'Plugins',
           list: [
-            'mcMMO',
+            'McMMO',
             'Multiverse',
             'WorldEdit',
             'WorldGuard',
@@ -75,6 +75,8 @@ export default {
           heading: 'Nützliches',
           list: [
             '<a href="https://minecraft.fandom.com/de/wiki/Minecraft_Wiki" target="_blank">Minecraft Wiki</a>',
+            '<a href="https://minecraft.tools/de" target="_blank">Minecraft Tools - Nützliche MC Werkzeuge</a>',
+            '<a href="https://mcmmo.fandom.com/wiki/Befehle_in_deutscher_Sprache" target="_blank">McMMO Chat Befehle</a>',
           ],
           isUl: true
         }
