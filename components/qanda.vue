@@ -39,18 +39,31 @@ export default {
           answer: 'Minecraft kannst unter folgendem Link kaufen: <a href="https://www.minecraft.net/de-de/get-minecraft">https://www.minecraft.net/de-de/get-minecraft</a>'
         }, {
           question: 'Gibt es Regeln?',
-          answer: 'Ja, schaut im Regel-Abschnitt nach'
+          answer: 'Ja, bitte schau im Regel-Abschnitt nach'
         }, {
           question: 'Was ist eine Whitelist?',
           answer: 'Der Minecraft-Server hat eingeschränkten Zugriff, nur Leute, auf der Liste dürfen auch auf den Server.'
         }, {
-          question: 'Was ist die Java- und was die Bedrock-Version?',
+          question: 'Was ist die Java-, was die Bedrock und was die Pocket-Version?',
           answer: `
           Die Java-Version ist das Original-Minecraft, dort können kostenlos Modifikationen und Texturenpakete installiert werden.
           <br/>
-          Die Bedrock-Version neu entwickelt worden und hat eine bessere Leistung.
+          Die Bedrock-Version ist neu entwickelt worden und hat eine bessere Leistung.
           <br/>
-          Normalerweise kann die Bedrock-Version nur auf Bedrock-Servern spielen, hier kann Sie aber durch Plugins trotzdem auf den Server.
+          Die Pocket-Version(PE, Pocket-Edition) ist extra für mobile Endgeräte entwickelt worden und hat somit Nachteile, aber passt in die Hosentasche.
+          <br/>
+          <br/>
+          Normalerweise kann die Bedrock/Pocket-Version nur auf Bedrock-Servern spielen, hier kann Sie aber durch Plugins trotzdem auf den Server.
+          `
+        }, {
+          question: 'Welche Version hat mein Gerät?',
+          answer: `
+          PC: Java & Bedrock
+          <br/>
+          Handy/Tablet: Pocket-Edtion
+          <br/>
+          Konsole: Pocket-Edition / Bedrock
+
           `
         }
       ]
