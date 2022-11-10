@@ -2,6 +2,19 @@
 
 Public Webpage to join the minecraft server
 
+## Setup on server
+> /usr/src/mc-web-lieh
+```
+docker-compose up -d --build --force-recreate
+```
+### check for same ip address
+> /etc/nginx/sites-enabled/mc.jonilieh.de
+```
+location / {
+  proxy_pass http://172.19.0.2:30000/;
+}
+```
+
 ## Build Setup
 
 ```bash
