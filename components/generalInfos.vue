@@ -8,7 +8,9 @@
         :key="i"
       >
         <v-expansion-panel-header class="title primary--text" expand-icon="mdi-server" disable-icon-rotate>
-          {{ item.heading }}
+          <span :class="item.isError ? 'error--text' : ''">
+            {{ item.heading }}
+          </span>
         </v-expansion-panel-header>
         <v-expansion-panel-content>
           <v-alert
@@ -45,9 +47,22 @@ export default {
     return {
       infos: [
         {
+          heading: 'Stand 10.11.2022',
+          list: [
+            'NEUE Map mit Amplified Weltgeneration',
+            'Skills und andere Welten wurden beibehalten',
+            'Wither nicht getötet',
+            'Enderdrache nicht getötet',
+            'Neueste Minecraft-Version(1.19)'
+          ],
+          isError: true,
+          isUl: true
+        }, 
+        {
           heading: 'Server-Adresse',
           answer: 'jonilieh.de'
-        }, {
+        }, 
+        {
           heading: 'Besonderes',
           list: [
             'Skills, Leveling und Super Fähigkeiten!',
@@ -55,15 +70,8 @@ export default {
             'Für Whitelist, bitte mich anschreiben!',
             'Interaktive Live Karte'
           ]
-        }, {
-          heading: 'Stand 01.07.2022',
-          list: [
-            'Wither nicht getötet',
-            'Enderdrache nicht getötet',
-            'Neueste Minecraft-Version(1.19)'
-          ],
-          isUl: true
-        }, {
+        }, 
+        {
           heading: 'Plugins',
           list: [
             'McMMO',

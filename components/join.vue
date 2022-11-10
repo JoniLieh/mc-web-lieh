@@ -3,7 +3,7 @@
     <slot />
 
     <v-list color="transparent" dense>
-      <v-subheader class="heading info--text">Die wirkliche Anweisung kann bei Konsolen anders sein, hatte bisher kein Minecraft auf Konsole zur Hand</v-subheader>
+      <v-subheader class="heading info--text">Die wirkliche Anweisung kann bei Konsolen abweichen, hatte bisher kein Minecraft auf Konsole zur Hand</v-subheader>
       <v-list-item v-for="(item, itemIndex) in setupItems" :key="itemIndex">
         <v-list-item-icon class="text-right">
           {{ itemIndex+1 }}

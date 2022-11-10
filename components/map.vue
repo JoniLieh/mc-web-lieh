@@ -4,8 +4,8 @@
 
     <v-card href="https://mc.jonilieh.de/map" target="_blank">
       <client-only>
-        <v-img src="https://i.imgur.com/B5HOMej.pngpng" max-height="500px" position="top center"/>
-
+        <!-- https://imgur.com/a/Ztq2MIv -->
+        <v-img src="https://i.imgur.com/1YLB4fK.png" max-height="500px" position="top center"/>
       </client-only>
       <!-- <v-card-text class="caption">
         <a href="https://mc.jonilieh.de/map" target="_blank">

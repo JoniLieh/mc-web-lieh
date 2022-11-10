@@ -21,7 +21,7 @@
       <h2 class="headline">
         <a :id="title.toLowerCase()" :href="'#'+title.toLowerCase()" class="text-decoration-none" v-text="title" />
       </h2>
-      <v-alert border="left" type="info" prominent dense text>
+      <v-alert v-if="infos.length" border="left" type="info" prominent dense text>
         <ul>
           <li v-for="(info, index2) in infos" :key="index2" class="font-italic" v-html="info" />
         </ul>
@@ -99,7 +99,7 @@ export default {
         }, {
           title: "Shader Schnellinstallation ",
           infos: [
-            '<span class="success--text">Da Optifine auf der 1.19 derzeit noch keinen Shader unterstützt, hier eine Alternative</span>'
+            //'<span class="success--text">Da Optifine auf der 1.19 derzeit noch keinen Shader unterstützt, hier eine Alternative</span>'
           ],
           subtitle:
             "Hier wird auf Iris anstatt Optifine gesetzt",
