@@ -11,9 +11,11 @@ services:
     ports:
       - 30000:30000
     networks:
-      - frontend
+      frontend:
+        ipv4_address: 172.16.1.2
 
 
 networks:
   frontend:
-    driver: host
+    external: true
+      

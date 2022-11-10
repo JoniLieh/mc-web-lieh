@@ -5,6 +5,10 @@ Public Webpage to join the minecraft server
 ## Setup on server
 > /usr/src/mc-web-lieh
 ```
+# first creation
+docker network create --gateway 172.16.1.1 --subnet 172.16.1.0/24 frontend
+
+# to update
 docker-compose up -d --build --force-recreate
 ```
 ### check for same ip address
