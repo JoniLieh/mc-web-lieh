@@ -11,11 +11,11 @@ docker network create --gateway 172.16.1.1 --subnet 172.16.1.0/24 frontend
 # to update
 docker-compose up -d --build --force-recreate
 ```
-### check for same ip address
+### check for same ip address(should be ok tho)
 > /etc/nginx/sites-enabled/mc.jonilieh.de
 ```
 location / {
-  proxy_pass http://172.19.0.2:30000/;
+  proxy_pass http://172.16.1.2:30000/;
 }
 ```
 
