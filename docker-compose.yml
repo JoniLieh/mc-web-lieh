@@ -11,5 +11,9 @@ services:
     ports:
       - 30000:30000
     networks:
-      - host
+      - frontend
 
+
+networks:
+  frontend:
+    driver: host
