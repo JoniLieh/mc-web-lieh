@@ -84,14 +84,14 @@ export default {
             `Lege "BSL Shaders" fest`
           ]
         },{
-          title: `OptiFine-Installation(Alternative: <a href="https://irisshaders.net/download" target="_blank">Iris Shaders</a>)`,
+          title: `OptiFine-Installation`,
           type: "optifine",
+          subtitle: `(Alternative: <a href="https://irisshaders.net/download" target="_blank">Iris Shaders</a>)`,
           infos: [
             "Höhere Bildrate (FPS) im Spiel",
             "Feinere Grafikeinstellungen",
             "Mit der C-Taste zoomen(Taste kann im Menü geändert werden)",
           ],
-          subtitle: null,
           tasks: [
             'Neueste Version von <a href="https://www.optifine.net/downloads" target="_blank">OptiFine herunterladen</a> (Vorsicht bei Download, keine falschen Links anklicken, falls verfügbar oben rechts "SKIP" ODER einfach "Mirror" herunterladen)',
             "<a>.jar</a> ausführen und im Minecraft-Pfad(muss normalerweise nicht geändert werden) installieren",
