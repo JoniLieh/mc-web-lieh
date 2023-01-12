@@ -47,11 +47,10 @@ export default {
     return {
       infos: [
         {
-          heading: 'Stand 10.01.2023',
+          heading: 'Stand 12.01.2023',
           list: [
             'NEUE Map mit Amplified Weltgeneration',
             'Skills wurden beibehalten',
-            'Enderdrache noch nicht besiegt',
             'Neueste Minecraft-Version(1.19+)'
           ],
           isError: true,
