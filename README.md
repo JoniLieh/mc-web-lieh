@@ -1,6 +1,7 @@
 # mc-web-lieh
 
 Public Webpage to join the minecraft server
+[https://mc.jonilieh.de](https://mc.jonilieh.de)
 
 ## Setup on server
 > /usr/src/mc-web-lieh

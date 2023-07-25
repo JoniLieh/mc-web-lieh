@@ -1,5 +1,8 @@
 {
+  // https://v3.nuxtjs.org/concepts/typescript
+  "extends": "./.nuxt/tsconfig.json",
   "compilerOptions": {
+    "types": ["vuetify"],
     "target": "ES2018",
     "module": "ESNext",
     "moduleResolution": "Node",
@@ -23,15 +26,5 @@
         "./*"
       ]
     },
-    "types": [
-      "@nuxt/types",
-      "@nuxtjs/axios",
-      "@types/node"
-    ]
   },
-  "exclude": [
-    "node_modules",
-    ".nuxt",
-    "dist"
-  ]
 }

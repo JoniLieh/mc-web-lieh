@@ -1,51 +1,46 @@
 <template>
   <v-app>
-    <v-app-bar fixed app>
-      <v-toolbar-title> JoniLieh-MC-Server </v-toolbar-title>
-      <v-spacer />
-      <v-img
-        src="/favicon.ico"
-        class="round-borders"
-        contain
-        height="auto"
-        max-height="48px"
-        max-width="48px"
-      />
-      <v-btn icon @click="$vuetify.theme.dark = !$vuetify.theme.dark">
-        <v-icon>mdi-theme-light-dark</v-icon>
-      </v-btn>
-    </v-app-bar>
+    <AppHeader />
+    
     <v-main>
-      <v-container :class="{'main-container': true, 'pa-6': !$vuetify.breakpoint.xs }">
+      <v-container :class="{'main-container': true, 'pa-6': !mobile }" dark>
         <span v-intersect="onIntersect" />
-        <Nuxt />
+        <slot />
       </v-container>
-      <v-fab-transition>
-        <v-btn
-          v-show="showFab"
-          fixed
-          bottom
-          right
-          fab
-          color="primary"
-          @click="$vuetify.goTo(0)"
-        >
-          <v-icon>mdi-arrow-up</v-icon>
-        </v-btn>
-      </v-fab-transition>
+
+      <scrollToTop></scrollToTop>
     </v-main>
-    <v-footer :absolute="!fixed" app>
-      <span>&copy; {{ new Date().getFullYear() }}</span>
-    </v-footer>
+
+    <AppBottomNav :mobile="mobile" />
+
+    <AppFooter />
+
+    <v-expand-transition>
+      <VLayoutItem v-show="showFab" id="back-to-top-btn" model-value :position="mobile ? 'top' : 'bottom'" class="text-end" size="88">
+        <div class="ma-4">
+          <VBtn @click="scrollToTop()" icon="mdi-arrow-up" color="primary" elevation="8" />
+        </div>
+      </VLayoutItem>
+    </v-expand-transition>
   </v-app>
 </template>
 
-<script>
+<script lang="ts" setup>
+import { useDisplay } from 'vuetify/lib/framework.mjs'
+
+const { mobile } = useDisplay()
+
+function scrollToTop() {
+  if (process.client)
+    window?.scrollTo(0, 0);
+}
+</script>
+
+<script lang="ts">
 export default {
   name: 'DefaultLayout',
   data () {
     return {
-      fixed: false,
       windowSize: {
         x: 0,
         y: 0
@@ -58,29 +53,32 @@ export default {
       x: window.innerWidth,
       y: window.innerHeight
     }
-    setTimeout(() => {
-      this.$vuetify.theme.dark = window.matchMedia('(prefers-color-scheme: dark)').matches
-    }, 100)
   },
 
   methods: {
-    onIntersect (entries) {
-      this.showFab = !entries[0].isIntersecting
+    onIntersect (intersected: boolean) {
+      this.showFab = !intersected
     }
   }
 }
 </script>
 
+<style scoped>
+#back-to-top-btn {
+  bottom: 0 !important;
+}
+</style>
+
 <style lang="scss">
 .v-main {
-  background-image: linear-gradient(0deg, #54d9d77a 5%, #ffffff 50%, #ffc4c1 95%);
+  background-image: linear-gradient(0deg,rgba(84,217,215,.47843) 5%,rgb(255 255 255) 50%,rgb(255 196 193) 95%);
 }
 
 .main-container {
   background-color: #ffffff85;
 }
 
-.theme--dark .main-container {
+.v-theme--dark .main-container {
   background-color: #1e1e1ede;
 }
 

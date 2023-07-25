@@ -1,36 +1,43 @@
 <template>
   <div>
     <slot />
-    <v-alert type="info" text dense>
+    <v-alert type="info" variant="tonal" class="mb-2" density="compact">
       Minecraft könnt ihr auch regulär im Laden kaufen, hier gibt es die Online-Anleitung.
     </v-alert>
     
-    <v-list color="transparent" dense>
-      <v-subheader class="heading primary--text">PC</v-subheader>
+    <v-list bg-color="transparent" density="comfortable">
+      <v-list-subheader class="text-h6 text-primary">PC</v-list-subheader>
       <v-list-item v-for="(item, itemIndex) in itemsPc" :key="itemIndex">
-        <v-list-item-icon class="text-right">
-          {{ itemIndex+1 }}
-        </v-list-item-icon>
-        <v-list-item-content class="d-block" v-html="item"></v-list-item-content>
+        <template v-slot:prepend>
+          <span class="mr-5">
+            {{ itemIndex + 1 }}.
+          </span>
+        </template>
+        <v-list-item-title class="d-block" v-html="item"></v-list-item-title>
       </v-list-item>
 
-      <v-divider />
+      <v-divider class="my-2" />
 
-      <v-subheader class="heading primary--text">Mobil</v-subheader>
+      <v-list-subheader class="text-h6 text-primary">Mobil</v-list-subheader>
       <v-list-item v-for="(item, itemIndex) in itemsMobile" :key="itemIndex+1*10">
-        <v-list-item-icon class="text-right">
-          {{ itemIndex+1 }}
-        </v-list-item-icon>
-        <v-list-item-content class="d-block" v-html="item"></v-list-item-content>
+        <template v-slot:prepend>
+          <span class="mr-5">
+            {{ itemIndex + 1 }}.
+          </span>
+        </template>
+        <v-list-item-title class="d-block" v-html="item"></v-list-item-title>
       </v-list-item>
       
-      <v-divider />
-      <v-subheader class="heading primary--text">Konsole</v-subheader>
+      <v-divider class="my-2" />
+
+      <v-list-subheader class="text-h6 text-primary">Konsole</v-list-subheader>
       <v-list-item v-for="(item, itemIndex) in itemsConsole" :key="itemIndex+1*100">
-        <v-list-item-icon class="text-right">
-          {{ itemIndex+1 }}
-        </v-list-item-icon>
-        <v-list-item-content class="d-block" v-html="item"></v-list-item-content>
+        <template v-slot:prepend>
+          <span class="mr-5">
+            {{ itemIndex + 1 }}.
+          </span>
+        </template>
+        <v-list-item-title class="d-block" v-html="item"></v-list-item-title>
       </v-list-item>
     </v-list>
   </div>

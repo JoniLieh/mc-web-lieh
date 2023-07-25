@@ -2,48 +2,50 @@
 <template>
   <div>
     <slot />
-    <v-expansion-panels multiple flat :value=[0,1,2,3,4]>
-      <v-expansion-panel
-        v-for="(item,i) in infos"
-        :key="i"
-      >
-        <v-expansion-panel-header class="title primary--text" expand-icon="mdi-server" disable-icon-rotate>
-          <span :class="item.isError ? 'error--text' : ''">
-            {{ item.heading }}
-          </span>
-        </v-expansion-panel-header>
-        <v-expansion-panel-content>
-          <v-alert
-            v-if="!item.list"
-            color="success"
-            border="left"
-            text
-          >
-            <div v-html="item.answer" />
-          </v-alert>
 
-          <v-list v-else dense>
-            <v-list-item v-for="(listItem, itemIndex) in item.list" :key="itemIndex+1*100">
-              <v-list-item-icon class="text-right">
-                <v-icon v-if="item.isUl">mdi-circle-small</v-icon>
-                <span v-else>
-                  {{ itemIndex+1 }}
-                </span>
-              </v-list-item-icon>
-              <v-list-item-content class="d-block" v-html="listItem"></v-list-item-content>
-            </v-list-item>
-          </v-list>
-        </v-expansion-panel-content>
-      </v-expansion-panel>
-    </v-expansion-panels>
+    <client-only>
+      <v-expansion-panels v-model="panel" multiple variant="inset">
+        <v-expansion-panel v-for="(item, i) in infos" :key="i">
+          <v-expansion-panel-title class="text-h6 primary-text" collapse-icon="mdi-server" expand-icon="mdi-server"
+            disable-icon-rotate>
+            <span :class="item.isError ? 'text-error' : ''">
+              {{ item.heading }}
+            </span>
+          </v-expansion-panel-title>
+          <v-expansion-panel-text>
+            <v-alert v-if="!item.list" color="success" icon="mdi-web" border="start" variant="tonal" >
+              <div v-html="item.answer" />
+            </v-alert>
+
+            <v-list v-else density="compact">
+              <v-list-item v-for="(listItem, itemIndex) in item.list" :key="itemIndex + 1 * 100">
+                <template v-slot:prepend>
+                  <div class="text-right">
+                    <v-icon v-if="item.isUl" start>mdi-circle-small</v-icon>
+                    <span v-else class="mr-5">
+                      {{ itemIndex + 1 }}.
+                    </span>
+                  </div>
+                </template>
+                <v-list-item-title class="d-block" v-html="listItem"></v-list-item-title>
+              </v-list-item>
+            </v-list>
+          </v-expansion-panel-text>
+        </v-expansion-panel>
+      </v-expansion-panels>
+    </client-only>
   </div>
 </template>
+
+<script setup>
+const panel = ref([0, 1, 2, 3, 4])
+</script>
 
 <script type="ts">
 export default {
   name: 'GeneralInfosComponent',
 
-  data () {
+  data() {
     return {
       infos: [
         {
@@ -55,11 +57,11 @@ export default {
           ],
           isError: true,
           isUl: true
-        }, 
+        },
         {
           heading: 'Server-Adresse',
           answer: 'jonilieh.de'
-        }, 
+        },
         {
           heading: 'Besonderes',
           list: [
@@ -68,7 +70,7 @@ export default {
             'Für Whitelist, bitte mich anschreiben!',
             'Interaktive Live Karte'
           ]
-        }, 
+        },
         {
           heading: 'Plugins',
           list: [

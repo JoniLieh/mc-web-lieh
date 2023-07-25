@@ -1,32 +1,36 @@
 <template>
   <div>
     <slot />
-    <v-subheader class="title mb-4 error--text">
+    
+    <h4 class="text-h4 mb-4 text-error">
       Folgendes gilt nur für die Minecraft Java-Edition und Windows!
-    </v-subheader>
-    <v-subheader class="font-italic">
+    </h4>
+
+    <v-list-subheader class="font-italic">
       Minecraft-Ordner befindet sich unter:&nbsp;
-      <a @click="copyText('%appdata%\\.minecraft')">
+      <a @click="copy('%appdata%\\.minecraft')" role="button">
         %appdata%\.minecraft
-        <v-icon color="primary" right small>mdi-content-copy</v-icon>
+        <v-icon color="primary" end small>mdi-content-copy</v-icon>
       </a>
-    </v-subheader>
-    <v-subheader class="font-italic">
-      Für einfache Installation: Mods lassen sich auch einfach mit einem Mod-Loader zB.:
-      <a class="mx-1" href="https://multimc.org/" target="_blank">MultiMC</a>
+    </v-list-subheader>
+    <v-list-subheader class="font-italic">
+      Für einfache Installation: Mods lassen sich auch einfach mit einem Mods-Client zB.:
+      <a class="mx-1" href="https://multimc.org/" target="_blank">MultiMC</a>(empfohlen), <a class="mx-1" href="https://www.curseforge.com/download/app/" target="_blank">CurseForge</a>, ...
       installieren
-    </v-subheader>
+    </v-list-subheader>
 
     <section v-for="({ title, infos, tasks, subtitle }, index) in extraItems" :key="index" class="mt-6">
-      <h2 class="headline">
-        <a :id="title.toLowerCase()" :href="'#'+title.toLowerCase()" class="text-decoration-none" v-text="title" />
+      <h2 class="text-h5 text-primary">
+        <a :id="title.toLowerCase()" :href="'#'+title.toLowerCase()" class="text-decoration-none text-primary" v-text="title" />
       </h2>
-      <v-alert v-if="infos.length" border="left" type="info" prominent dense text>
+
+      <v-alert v-if="infos.length" class="my-2" border="start" type="info" density="compact" variant="tonal" prominent>
         <ul>
           <li v-for="(info, index2) in infos" :key="index2" class="font-italic" v-html="info" />
         </ul>
       </v-alert>
-      <h2 v-if="subtitle" class="title mb-2" v-html="subtitle" />
+
+      <h2 v-if="subtitle" class="text-h6 mb-2" v-html="subtitle" />
 
       <ol>
         <li v-for="(task, index2) in tasks" :key="index2" v-html="task" />
@@ -37,6 +41,12 @@
 
 * minecraft version
 * Karte aktualisiert sich alle 24h
+
+<script setup>
+import { useClipboard } from '@vueuse/core'
+
+const { copy } = useClipboard()
+</script>
 
 <script type="ts">
 export default {
@@ -49,7 +59,7 @@ export default {
           title: "Texturenpaket-Installation",
           type: "resourcepack",
           infos: [
-            '<span class="error--text">Verringert die Bildrate (FPS) im Spiel!</span>',
+            '<span class="text-error">Verringert die Bildrate (FPS) im Spiel!</span>',
             "Veränderte Texturen/Schriftarten",
             "Höhere Auflösungen verfügbar",
           ],
@@ -100,7 +110,7 @@ export default {
           title: "Shader-Installation",
           type: "shader",
           infos: [
-            '<span class="error--text">Verringert die Bildrate (FPS) im Spiel!</span>',
+            '<span class="text-error">Verringert die Bildrate (FPS) im Spiel!</span>',
             "Optische Aufwertung durch dynamische Schatten",
             "Unterschiedlichste Shader möglich",
             'Es gibt auch bereits&nbsp;<a href="https://minecraft.fandom.com/de/wiki/Shader" target="_blank">nativ integrierte Shader</a>',

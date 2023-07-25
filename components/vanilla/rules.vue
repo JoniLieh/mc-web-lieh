@@ -1,16 +1,16 @@
 <template>
   <div>
     <slot />
-    <v-list color="transparent" dense>
+    <v-list bg-color="transparent" density="compact">
       <v-list-item v-for="(rule, ruleIndex) in rules" :key="ruleIndex" class="success--text text--darken-1" link>
-        <v-list-item-icon>
-          <v-icon color="primary" small>
+        <template v-slot:prepend>
+          <v-icon color="primary" start>
             mdi-star
           </v-icon>
-        </v-list-item-icon>
-        <v-list-item-content>
+        </template>
+        <v-list-item-title>
           {{ rule }}
-        </v-list-item-content>
+        </v-list-item-title>
       </v-list-item>
     </v-list>
   </div>

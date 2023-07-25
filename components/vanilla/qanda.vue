@@ -2,23 +2,28 @@
 <template>
   <div>
     <slot />
-    <v-expansion-panels multiple popout flat>
+    <v-expansion-panels multiple variant="popout">
       <v-expansion-panel
         v-for="(item,i) in qanda"
         :key="i"
       >
-        <v-expansion-panel-header class="title" expand-icon="mdi-help" disable-icon-rotate>
+        <v-expansion-panel-title class="text-h6" expand-icon="mdi-help" disable-icon-rotate>
+          <template v-slot:actions>
+            <v-icon>
+              mdi-help
+            </v-icon>
+          </template>
           {{ item.question }}
-        </v-expansion-panel-header>
-        <v-expansion-panel-content>
+        </v-expansion-panel-title>
+        <v-expansion-panel-text>
           <v-alert
             color="info"
-            border="left"
-            text
+            border="start"
+            variant="tonal" 
           >
             <div v-html="item.answer" />
           </v-alert>
-        </v-expansion-panel-content>
+        </v-expansion-panel-text>
       </v-expansion-panel>
     </v-expansion-panels>
   </div>
@@ -42,9 +47,9 @@ export default {
           answer: 'Ja, bitte schau im Regel-Abschnitt nach'
         }, {
           question: 'Was ist eine Whitelist?',
-          answer: 'Der Minecraft-Server hat eingeschränkten Zugriff, nur Leute, auf der Liste dürfen auch auf den Server.'
+          answer: 'Der Minecraft-Server hat eingeschränkten Zugriff, nur Leute auf der Liste dürfen auch auf den Server.'
         }, {
-          question: 'Was ist die Java-, was die Bedrock und was die Pocket-Version?',
+          question: 'Was ist die Java-, was die Bedrock- und was die Pocket-Version?',
           answer: `
           Die Java-Version ist das Original-Minecraft, dort können kostenlos Modifikationen und Texturenpakete installiert werden.
           <br/>

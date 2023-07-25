@@ -5,7 +5,7 @@ services:
 
 # frontend stuff
   frontend:
-    build: .                             # use Dockerfile in react_frontend dir
+    build: .                             # use Dockerfile dir
     container_name: frontend_mc_web_lieh
     restart: on-failure:5
     ports:

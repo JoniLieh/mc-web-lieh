@@ -1,0 +1,4 @@
+{
+  "workbench.colorTheme": "One Dark Theme",
+  "typescript.tsdk": "node_modules/typescript/lib"
+}

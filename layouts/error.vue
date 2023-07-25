@@ -9,11 +9,11 @@
                 <v-img src="/404.svg" />
 
                 <v-card-text class="text-center">
-                  <v-alert type="error" text>
+                  <v-alert type="error" variant="tonal">
                     Pfad konnte nicht gefunden werden.
                   </v-alert>
                   <v-btn color="primary" to="/" large block>
-                    <v-icon left>
+                    <v-icon start>
                       mdi-home
                     </v-icon>
                     Startseite
@@ -24,7 +24,7 @@
           </v-row>
         </div>
         <h1 v-else>
-          <v-alert type="error" text>
+          <v-alert type="error" variant="tonal">
             {{ otherError }}
           </v-alert>
         </h1>
