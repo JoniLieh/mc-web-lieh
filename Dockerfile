@@ -18,8 +18,8 @@ RUN npm i
 # Express-Server läuft
 EXPOSE 30000
 
-ENV NUXT_HOST=0.0.0.0
-ENV NUXT_PORT=30000
+ENV NITRO_HOST=0.0.0.0
+ENV NITRO_PORT=30000
 
 # Starten des definierten npm-Scripts
 RUN [ "npm", "run", "build" ]
