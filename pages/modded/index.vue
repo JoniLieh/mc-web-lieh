@@ -110,7 +110,10 @@ const installationItems = [
     title: `Starte nun das Modpack indem du auf die hinzugefügt Instanz doppelklickst oder durch Auswahl und dann an der Seite auf <code>"Starten"</code>`,
     subtitle: `(Beide <code>.zip</code>s können jetzt wieder gelöscht werden)`
   }, {
-    title: `Ggfls. änderst du noch die RAM-Zuweisung für die Instanz (derzeit 8GB) und änderst noch Maus-, Tastatur & Grafikeinstellungen in Minecraft, F11 für vollbildmodus`,
+    title: `Ändere noch die <code>RAM</code>-Zuweisung in den Einstellungen vom <code>MultiMC</code>, in der Regel die Hälfte von deinem totalen Arbeitsspeicher ich empfehle mind. 8GB.`,
+    subtitle: `<a href="https://i.imgur.com/BNWv6Tc.png" target="_blank">Hilfe Bild</a>`
+  }, {
+    title: `Ggfls. änderst noch Maus-, Tastatur & Grafikeinstellungen in Minecraft, F11 für vollbildmodus`,
     subtitle: `Es muss sonst nichts weiter installiert werden, Resource Pack und Shaders sind bereits enthalten :)`
   }
 ]
