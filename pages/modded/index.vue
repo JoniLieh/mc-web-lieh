@@ -62,6 +62,7 @@
           <br>
           <small class="caption">(Server hat leider nur begrenzen RAM)</small>
         </li>
+        <li>Merkt euch, wo ihr Chunk Loader verwendet, auch Quarrys sind Chunk Loader!</li>
       </ul>
     </v-alert>
 
@@ -80,6 +81,12 @@
         <li v-for="(step, stepIndex) in item.steps" :key="stepIndex" v-html="step"></li>
       </ul>
     </section>
+
+    <h4 class="mt-12 mb-4 text-sm-h4 text-overline">Änderungen</h4>
+    <ul class="text-overline">
+      <li>Von MultiMC auf PrismLauncher gewechselt, weil man damit Mods updaten und einfach hinzufügen kann</li>
+      <li>Neue Regel hinzugefügt zwecks Chunk Loaders</li>
+    </ul>
   </div>
 </template>
 
@@ -94,24 +101,24 @@ const installationItems = [
     subtitle: `(<code>Java JRE</code> reicht nicht aus für Mods; Vanilla Minecraft kommt bereits mit eigenem Java, allerdings brauchen Mods die Entwicklungsumgebung von Java)`
   }, {
     title: "Downloade das Modpack und den Client",
-    subtitle: `(Wenn du bereits <code>MultiMC</code> besitzt, brauchst du nur das Modpack; Alternativ kann <code>MultiMC</code> auch von der offiziellen Seite heruntergeladen werden)`
+    subtitle: `(Wenn du bereits <code>PrismLauncher</code> o. <code>MultiMC</code> besitzt, brauchst du nur das Modpack; Alternativ kann <code>PrismLauncher</code> auch von der offiziellen Seite heruntergeladen werden)`
   }, {
-    title: "Entpacke <code>MultiMC.zip</code> wo du es wieder findest (zB. auf dem Desktop)",
+    title: "Entpacke <code>PrismLauncher... .zip</code> wo du es wieder findest (zB. auf dem Desktop)",
     subtitle: `(Der <code>Windows-Explorer</code> kann mittlerweile Packen und Entpacken)`
   }, {
-    title: "Starte die <code>MultiMC.exe</code> aus dem entpackten Ordner",
+    title: "Starte <code>prismlauncher.exe</code> aus dem entpackten Ordner",
     subtitle: `(Hiermit wirst du dein Minecraft starten, also kannst du auch eine Verknüpfung auf deinen Desktop dafür einrichten)`
   }, {
-    title: "Gehe den Installationsassistenten im <code>MultiMC</code> durch und verknüpfte deinen Minecraft-Account damit."
+    title: "Gehe den Installationsassistenten im <code>PrismLauncher</code> durch und verknüpfte deinen Minecraft-Account damit (oben rechts im Launcher)."
   }, {
     title: `Füge nun das Modpack hinzu, indem du oben links auf <code>"Instanz hinzufügen"</code> gehst, danach auf <code>"Importiere ZIP-Datei"</code> und anschließend <code>"Durchsuchen"</code>, nun navigiere zu der heruntergeladen <code>Modpack.zip</code>-Datei`,
-    subtitle: `<a href="https://i.imgur.com/9XoyMVY.png" target="_blank">Hilfe Bild</a>`
+    subtitle: `<a href="https://i.imgur.com/YTCyrMp.png" target="_blank">Hilfe Bild</a>`
   }, {
     title: `Starte nun das Modpack indem du auf die hinzugefügt Instanz doppelklickst oder durch Auswahl und dann an der Seite auf <code>"Starten"</code>`,
     subtitle: `(Beide <code>.zip</code>s können jetzt wieder gelöscht werden)`
   }, {
-    title: `Ändere noch die <code>RAM</code>-Zuweisung in den Einstellungen vom <code>MultiMC</code>, in der Regel die Hälfte von deinem totalen Arbeitsspeicher ich empfehle mind. 8GB.`,
-    subtitle: `<a href="https://i.imgur.com/BNWv6Tc.png" target="_blank">Hilfe Bild</a>`
+    title: `Ändere noch die <code>RAM</code>-Zuweisung in den Einstellungen vom <code>PrismLauncher</code>, in der Regel die Hälfte von deinem totalen Arbeitsspeicher ich empfehle mind. 8GB.`,
+    subtitle: `<a href="https://i.imgur.com/xIgWoQM.png" target="_blank">Hilfe Bild</a>`
   }, {
     title: `Ggfls. änderst noch Maus-, Tastatur & Grafikeinstellungen in Minecraft, F11 für vollbildmodus`,
     subtitle: `Es muss sonst nichts weiter installiert werden, Resource Pack und Shaders sind bereits enthalten :)`
@@ -122,15 +129,15 @@ const errorItems = [
   {
     title: `Java wird nicht erkannt`,
     steps: [
-      `In den MultiMC-Einstellungen kann man Java durch Auto-Erkennung die installierten Java-Versionen auswählen`,
+      `In den PrismLauncher-Einstellungen kann man Java durch Auto-Erkennung die installierten Java-Versionen auswählen`,
       `Haben Sie versucht das Gerät aus- und einzuschalten? (Starte den PC nach der Java-Installation neu)`
     ]
   },{
     title: `Das Spiel ruckelt`,
     steps: [
-      `Wechsle zu einem Low-Shader`,
+      `Wechsle zu einem Low-Shader (Hotkey: <code>O</code>)`,
       `Stelle die Sichtweite / Grafik herunter`,
-      `Erhöhe den RAM für die Minecraft-Instanz im MultiMC`
+      `Erhöhe den RAM für die Minecraft-Instanz im PrismLauncher`
     ]
   },{
     title: `<code class="text-error">Error loading mods</code> zB. <code>Create (create) has failed to load correctly</code>`,
@@ -140,10 +147,10 @@ const errorItems = [
   },{
     title: `Mods sind nicht mehr aktuell / unterschiedliche Mods`,
     steps: [
-      `Bezieht das Modpack erneut und installiert es`,
-      `Aktualisiert eure Modsliste selbst (für Erfahrene)`
+      `Bezieht das Modpack erneut und installiert es erneut`,
+      `Aktualisiert eure Mods im PrismLauncher <a href="https://i.imgur.com/eeya0YW.png" target="_blank">Hilfe Bild</a>`
     ]
-  },
+  }
 ]
 
 </script>
