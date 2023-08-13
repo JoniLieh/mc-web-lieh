@@ -94,7 +94,7 @@
 
 const installationItems = [
   {
-    title: "Stelle sicher, dass du Minecraft besitzt und er mit deinem Microsoft-Account verknüpft ist.",
+    title: "Stelle sicher, dass du einen Minecraft-Account besitzt und er mit deinem Microsoft-Account verknüpft ist.",
     subtitle: `(Hilfe dazu findest du auch <a href="/#installation">hier</a>)`
   }, {
     title: "Habe mindestens <code>Java JDK 17</code> installiert",
@@ -120,16 +120,18 @@ const installationItems = [
     title: `Ändere noch die <code>RAM</code>-Zuweisung in den Einstellungen vom <code>PrismLauncher</code>, in der Regel die Hälfte von deinem totalen Arbeitsspeicher ich empfehle mind. 8GB.`,
     subtitle: `<a href="https://i.imgur.com/xIgWoQM.png" target="_blank">Hilfe Bild</a>`
   }, {
-    title: `Ggfls. änderst noch Maus-, Tastatur & Grafikeinstellungen in Minecraft, F11 für vollbildmodus`,
+    title: `Ggfls. änderst noch Maus-, Tastatur & Grafikeinstellungen in Minecraft, F11 für Vollbildmodus`,
     subtitle: `Es muss sonst nichts weiter installiert werden, Resource Pack und Shaders sind bereits enthalten :)`
   }
 ]
 
 const errorItems = [
   {
-    title: `Java wird nicht erkannt`,
+    title: `Java-Probleme`,
     steps: [
+      `Habe mindestens JDK 17 installiert`,
       `In den PrismLauncher-Einstellungen kann man Java durch Auto-Erkennung die installierten Java-Versionen auswählen`,
+      `<a href="https://i.imgur.com/NMdh6zZ.png" target="_blank">Hilfe Bild</a>`,
       `Haben Sie versucht das Gerät aus- und einzuschalten? (Starte den PC nach der Java-Installation neu)`
     ]
   },{
@@ -149,6 +151,11 @@ const errorItems = [
     steps: [
       `Bezieht das Modpack erneut und installiert es erneut`,
       `Aktualisiert eure Mods im PrismLauncher <a href="https://i.imgur.com/eeya0YW.png" target="_blank">Hilfe Bild</a>`
+    ]
+  },{
+    title: `Installation hängt bei 99%`,
+    steps: [
+      `Neustarte den Download, ggfls. Launcher neustarten`
     ]
   }
 ]
