@@ -63,6 +63,19 @@
           <small class="caption">(Server hat leider nur begrenzen RAM)</small>
         </li>
         <li>Merkt euch, wo ihr Chunk Loader verwendet, auch Quarrys sind Chunk Loader!</li>
+        <li>Haltet euch nicht in ungeladeten Chunks auf, wartet in einem geladenem Chunk und lasst den Server rendern</li>
+      </ul>
+    </v-alert>
+
+    <br>
+    
+    <v-alert title="Guides" type="accent" icon="mdi-charity" border="start" variant="tonal">
+      <ul>
+        <li v-for="(guideItem, guideItemIndex) in guideItems" :key="guideItemIndex">
+          <a :href="guideItem.url" target="_blank">
+            {{guideItem.text}} <v-icon color="primary" end>mdi-link-variant</v-icon>
+          </a>
+        </li>
       </ul>
     </v-alert>
 
@@ -86,6 +99,7 @@
     <ul class="text-overline">
       <li>Von MultiMC auf PrismLauncher gewechselt, weil man damit Mods updaten und einfach hinzufügen kann</li>
       <li>Neue Regel hinzugefügt zwecks Chunk Loaders</li>
+      <li>Guides hinzugefügt</li>
     </ul>
   </div>
 </template>
@@ -97,7 +111,7 @@ const installationItems = [
     title: "Stelle sicher, dass du einen Minecraft-Account besitzt und er mit deinem Microsoft-Account verknüpft ist.",
     subtitle: `(Hilfe dazu findest du auch <a href="/#installation">hier</a>)`
   }, {
-    title: "Habe mindestens <code>Java JDK 17</code> installiert",
+    title: "Habe mindestens <code>Java JDK 17</code> installiert, alternativ einfach ",
     subtitle: `(<code>Java JRE</code> reicht nicht aus für Mods; Vanilla Minecraft kommt bereits mit eigenem Java, allerdings brauchen Mods die Entwicklungsumgebung von Java)`
   }, {
     title: "Downloade das Modpack und den Client",
@@ -109,13 +123,16 @@ const installationItems = [
     title: "Starte <code>prismlauncher.exe</code> aus dem entpackten Ordner",
     subtitle: `(Hiermit wirst du dein Minecraft starten, also kannst du auch eine Verknüpfung auf deinen Desktop dafür einrichten)`
   }, {
-    title: "Gehe den Installationsassistenten im <code>PrismLauncher</code> durch und verknüpfte deinen Minecraft-Account damit (oben rechts im Launcher)."
+    title: "Gehe den Installationsassistenten im <code>PrismLauncher</code> durch.",
+    subtitle: `Du bist fertig, wenn es so aussieht <a href="https://i.imgur.com/YTCyrMp.png" target="_blank">Hilfe Bild</a>`
+  }, {
+    title: "Verknüpfte deinen Minecraft-Account mit dem <code>PrismLauncher</code> (oben rechts im Launcher)"
   }, {
     title: `Füge nun das Modpack hinzu, indem du oben links auf <code>"Instanz hinzufügen"</code> gehst, danach auf <code>"Importiere ZIP-Datei"</code> und anschließend <code>"Durchsuchen"</code>, nun navigiere zu der heruntergeladen <code>Modpack.zip</code>-Datei`,
     subtitle: `<a href="https://i.imgur.com/YTCyrMp.png" target="_blank">Hilfe Bild</a>`
   }, {
     title: `Starte nun das Modpack indem du auf die hinzugefügt Instanz doppelklickst oder durch Auswahl und dann an der Seite auf <code>"Starten"</code>`,
-    subtitle: `(Beide <code>.zip</code>s können jetzt wieder gelöscht werden)`
+    subtitle: `Es kann vorkommen, dass es bei 99% hängt, siehe Problembehandlung; (Beide <code>.zip</code>s können jetzt wieder gelöscht werden)`
   }, {
     title: `Ändere noch die <code>RAM</code>-Zuweisung in den Einstellungen vom <code>PrismLauncher</code>, in der Regel die Hälfte von deinem totalen Arbeitsspeicher ich empfehle mind. 8GB.`,
     subtitle: `<a href="https://i.imgur.com/xIgWoQM.png" target="_blank">Hilfe Bild</a>`
@@ -125,11 +142,36 @@ const installationItems = [
   }
 ]
 
+const guideItems = [
+  {
+    text: "Silent Gear (Individuelle Ausrüstungen mit außergewöhnlichen Fähigkeiten)",
+    url: "https://allthemods.github.io/alltheguides/gg/silent-gear/"
+  },{
+    text: "Mekanism (Endgame Maschinen und Ausrüstung)",
+    url: "https://allthemods.github.io/alltheguides/gg/mekanism/"
+  },{
+    text: "XNet (Logistik)",
+    url: "https://www.mcjty.eu/docs/mods/xnet/"
+  },{
+    text: "Refined Storage (Logistik & Storage)",
+    url: "https://allthemods.github.io/alltheguides/gg/refined-storage/"
+  },{
+    text: "Apotheosis (Magie)",
+    url: "https://www.curseforge.com/minecraft/mc-mods/apotheosis"
+  },{
+    text: "RFTools (Logistik)",
+    url: "https://www.mcjty.eu/docs/mods/rftools/"
+  },{
+    text: "Ad Astra (Planeten bereise)",
+    url: "https://ad-astra-mod.fandom.com/wiki/Ad_Astra_Mod_Wiki"
+  },
+]
+
 const errorItems = [
   {
     title: `Java-Probleme`,
     steps: [
-      `Habe mindestens JDK 17 installiert`,
+      `JDK 17 installiert?`,
       `In den PrismLauncher-Einstellungen kann man Java durch Auto-Erkennung die installierten Java-Versionen auswählen`,
       `<a href="https://i.imgur.com/NMdh6zZ.png" target="_blank">Hilfe Bild</a>`,
       `Haben Sie versucht das Gerät aus- und einzuschalten? (Starte den PC nach der Java-Installation neu)`
