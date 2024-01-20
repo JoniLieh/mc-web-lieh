@@ -1,28 +1,41 @@
-# Definieren des Basis Docker Images
-FROM node:lts-alpine
+# syntax=docker/dockerfile:1
 
-# Erstellen des Anwendungsverzeichnisses
-WORKDIR /usr/src/app
+# Comments are provided throughout this file to help you get started.
+# If you need more help, visit the Dockerfile reference guide at
+# https://docs.docker.com/engine/reference/builder/
 
-# update and install dependency
-RUN apk update && apk upgrade
-RUN apk add git
 
-# Kopieren der Quelltextdateien
-COPY . .
+# oven/bun not working with bun install "error: zlib.BrotliDecompress is not implemented" https://github.com/oven-sh/bun/issues/5990#issuecomment-1738422089
+FROM node:lts-bullseye-slim
 
-# Installieren der Abhängigkeiten
-RUN npm i
+RUN apt-get -y update; apt-get -y install curl; apt-get -y install unzip
+# Run the application as a non-root user and copy files
+USER node 
 
-# Freigeben des Ports, unter dem der 
-# Express-Server läuft
-EXPOSE 30000
+# RUN curl -fsSL https://bun.sh/install | BUN_INSTALL=/usr bash
+RUN curl -fsSL https://bun.sh/install | bash
 
-ENV NITRO_HOST=0.0.0.0
-ENV NITRO_PORT=30000
+# copy env file
+WORKDIR /home/bun/frontend
+COPY .env.production .
 
-# Starten des definierten npm-Scripts
-RUN [ "npm", "run", "build" ]
-CMD [ "npm", "run", "start" ]
-# Alternativ Starten im Debug-Modus
-# CMD [ "npm", "start:debug" ]
+WORKDIR /home/bun/frontend/app
+
+# Use production node environment by default.
+ENV NODE_ENV production
+
+# Expose the port that the application listens on.
+EXPOSE $NITRO_PORT
+
+# Copy the rest of the source files into the image.
+COPY frontend .
+
+# https://github.com/oven-sh/bun/issues/5990#issuecomment-1738422089
+RUN ~/.bun/bin/bun install
+
+# built project
+RUN ~/.bun/bin/bun run build
+
+# Run the application.
+CMD ~/.bun/bin/bun run start
+

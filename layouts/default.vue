@@ -1,45 +1,41 @@
 <template>
   <v-app>
     <AppHeader />
-    
+
+    <back-to-top></back-to-top>
+
     <v-main>
-      <v-container :class="{'main-container': true, 'pa-6': !mobile }" dark>
+      <v-container :class="{ 'main-container': true, 'pa-6': !mobile }" dark>
         <span v-intersect="onIntersect" />
         <slot />
       </v-container>
 
-      <scrollToTop></scrollToTop>
+      <!-- <AppBottomNav class="hidden-md-and-up" /> -->
+
     </v-main>
 
-    <AppBottomNav :mobile="mobile" />
-
     <AppFooter />
-
-    <v-expand-transition>
-      <VLayoutItem v-show="showFab" id="back-to-top-btn" model-value :position="mobile ? 'top' : 'bottom'" class="text-end" size="88">
-        <div class="ma-4">
-          <VBtn @click="scrollToTop()" icon="mdi-arrow-up" color="primary" elevation="8" />
-        </div>
-      </VLayoutItem>
-    </v-expand-transition>
   </v-app>
 </template>
 
 <script lang="ts" setup>
-import { useDisplay } from 'vuetify/lib/framework.mjs'
+import { useDisplay } from 'vuetify'
+import { useGoTo } from 'vuetify'
 
 const { mobile } = useDisplay()
+const goTo = useGoTo();
 
-function scrollToTop() {
-  if (process.client)
-    window?.scrollTo(0, 0);
-}
+onMounted(async () => {
+  await nextTick();
+  if (useRoute().hash)
+    goTo(useRoute().hash)
+});
 </script>
 
 <script lang="ts">
 export default {
   name: 'DefaultLayout',
-  data () {
+  data() {
     return {
       windowSize: {
         x: 0,
@@ -48,7 +44,7 @@ export default {
       showFab: false
     }
   },
-  mounted () {
+  mounted() {
     this.windowSize = {
       x: window.innerWidth,
       y: window.innerHeight
@@ -56,7 +52,7 @@ export default {
   },
 
   methods: {
-    onIntersect (intersected: boolean) {
+    onIntersect(intersected: boolean) {
       this.showFab = !intersected
     }
   }
@@ -71,7 +67,7 @@ export default {
 
 <style lang="scss">
 .v-main {
-  background-image: linear-gradient(0deg,rgba(84,217,215,.47843) 5%,rgb(255 255 255) 50%,rgb(255 196 193) 95%);
+  background-image: linear-gradient(0deg, rgba(84, 217, 215, .47843) 5%, rgb(255 255 255) 50%, rgb(255 196 193) 95%);
 }
 
 .main-container {

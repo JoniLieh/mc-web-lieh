@@ -1,45 +1,37 @@
-import { createVuetify, IconSet, IconAliases, IconProps } from "vuetify";
+// import this after install `@mdi/font` package
+import '@mdi/font/css/materialdesignicons.css'
 
 import { md3 } from 'vuetify/blueprints'
 
-import { aliases } from 'vuetify/iconsets/mdi'
-import { mdi } from 'vuetify/lib/iconsets/mdi';
+import 'vuetify/styles'
+import { createVuetify } from 'vuetify'
+import { light, dark } from '~/assets/vuetifyThemes'
 
-
-// import * as components from 'vuetify/components'
-// import * as directives from 'vuetify/directives'
-
-// https://vuetifyjs.com/en/features/global-configuration/
+// Translations provided by Vuetify
+import { de, en } from 'vuetify/locale'
 
 export default defineNuxtPlugin((app) => {
   const vuetify = createVuetify({
-    // components,
-    // directives,
+    // ... your configuration
     blueprint: md3,
     ssr: true,
-    defaults,
-    // add theme
+    locale: {
+      locale: 'de',
+      fallback: 'en',
+      messages: { de, en },
+    },
     theme: {
-      defaultTheme: LIGHT_THEME,
+      defaultTheme: 'light',
       themes: {
         light,
-        dark,
+        dark
       },
-      // add color variations
       variations: {
-        colors: ["primary", "secondary", "accent"],
+        colors: ['primary', 'secondary', 'accent'],
         lighten: 4,
         darken: 4,
       },
-    },
-    icons: {
-      defaultSet: 'mdi',
-      aliases,
-      sets: {
-        mdi,
-      }
-    },
-  });
-  
-  app.vueApp.use(vuetify);
-});
+    }
+  })
+  app.vueApp.use(vuetify)
+})

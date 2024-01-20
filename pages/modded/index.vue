@@ -1,38 +1,21 @@
 <template>
   <div>
-    <h1 class="my-12 text-sm-h1 text-h2">
+    <h1 class="text-sm-h1 text-h2">
       Modded
     </h1>
-    <h2 class="my-12 text-sm-h2 text-h3">
+    <br>
+    <h2 class="text-sm-h2 text-h3">
       Allgemeine Infos
     </h2>
+    <br>
 
-    <div class="text-overline text-error">Modded Minecraft funktioniert zurzeit nur auf der Java-PC-Version</div>
+    <p class="text-overline text-error">Modded Minecraft funktioniert zurzeit nur auf der Java-PC-Version</p>
     <br>
     
-    <v-alert title="Server-Adresse" icon="mdi-web" type="success" border="start" variant="tonal">
-      <span class="text-primary">
-        jonilieh.de
-      </span>
-    </v-alert>
+    <serverAddress></serverAddress>
 
     <br>
-
-    <v-alert title="Downloads" icon="mdi-download" color="accent" border="start" variant="tonal">
-      <ul>
-        <li>
-          <a href="https://www.dropbox.com/sh/vecc59f1pbamnn2/AACvDgWn9QGfWofwsVFOTThza?dl=0" target="_blank">
-            Modpack & Client <v-icon color="primary" end>mdi-link-variant</v-icon>
-          </a>
-        </li>
-        <li>
-          <a href="https://download.oracle.com/java/17/latest/jdk-17_windows-x64_bin.exe" target="_blank">
-            Java 17 JDK
-            <v-icon color="primary" end>mdi-link-variant</v-icon>
-          </a>
-        </li>
-      </ul>
-    </v-alert>
+    <bmc-downloads></bmc-downloads>
 
     <br>
 
@@ -111,7 +94,7 @@ const installationItems = [
     title: "Stelle sicher, dass du einen Minecraft-Account besitzt und er mit deinem Microsoft-Account verknüpft ist.",
     subtitle: `(Hilfe dazu findest du auch <a href="/#installation">hier</a>)`
   }, {
-    title: "Habe mindestens <code>Java JDK 17</code> installiert, alternativ einfach ",
+    title: "Habe mindestens <code>Java JDK 17</code> installiert ",
     subtitle: `(<code>Java JRE</code> reicht nicht aus für Mods; Vanilla Minecraft kommt bereits mit eigenem Java, allerdings brauchen Mods die Entwicklungsumgebung von Java)`
   }, {
     title: "Downloade das Modpack und den Client",

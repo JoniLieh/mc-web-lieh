@@ -49,11 +49,9 @@ export default {
     return {
       infos: [
         {
-          heading: 'Stand 12.01.2023',
+          heading: 'Stand 20.01.2024',
           list: [
-            'NEUE Map mit Amplified Weltgeneration',
-            'Skills wurden beibehalten',
-            'Neueste Minecraft-Version(1.19+)'
+            'Better MC Modpack siehe BETTER MC'
           ],
           isError: true,
           isUl: true

@@ -61,7 +61,6 @@ import JoinComponent from '~/components/vanilla/join.vue'
 import GeneralInfosComponent from '~/components/vanilla/generalInfos.vue'
 import ExtraComponent from '~/components/vanilla/extras.vue'
 import MapComponent from '~/components/vanilla/map.vue'
-import { useDisplay } from 'vuetify/lib/framework.mjs'
 
 
 export default {
