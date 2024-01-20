@@ -24,9 +24,6 @@ WORKDIR /home/bun/frontend/app
 # Use production node environment by default.
 ENV NODE_ENV production
 
-# Expose the port that the application listens on.
-EXPOSE $NITRO_PORT
-
 # Copy the rest of the source files into the image.
 COPY frontend .
 
