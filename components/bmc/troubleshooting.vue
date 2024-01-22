@@ -30,7 +30,7 @@ const errorItems = [
   },{
     title: `Das Spiel ruckelt / schlechte FPS`,
     steps: [
-      `Wechsle zu einem Low-Shader (Hotkey: <code>O</code>)`,
+      `Falls aktiviert, deaktiviere deinen Shader(!)`,
       `Stelle die Sichtweite / Grafik herunter`,
       `Erhöhe den RAM für die Minecraft-Instanz im PrismLauncher`,
       `Folge dem Performance Guide`
