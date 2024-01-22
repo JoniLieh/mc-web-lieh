@@ -106,8 +106,7 @@ const installationItems = [
     title: "Starte <code>prismlauncher.exe</code> aus dem entpackten Ordner",
     subtitle: `(Hiermit wirst du dein Minecraft starten, also kannst du auch eine Verknüpfung auf deinen Desktop dafür einrichten)`
   }, {
-    title: "Gehe den Installationsassistenten im <code>PrismLauncher</code> durch.",
-    subtitle: `Du bist fertig, wenn es so aussieht <a href="https://i.imgur.com/YTCyrMp.png" target="_blank">Hilfe Bild</a>`
+    title: "Gehe den Installationsassistenten im <code>PrismLauncher</code> durch."
   }, {
     title: "Verknüpfte deinen Minecraft-Account mit dem <code>PrismLauncher</code> (oben rechts im Launcher)"
   }, {

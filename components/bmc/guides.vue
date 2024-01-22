@@ -3,7 +3,7 @@
     <ul>
       <li v-for="(guideItem, guideItemIndex) in guideItems" :key="guideItemIndex">
         <a :href="guideItem.url" target="_blank">
-          {{ guideItem.text }} <v-icon color="primary" end>mdi-link-variant</v-icon>
+          {{ guideItem.text }}<v-icon color="primary" end>mdi-link-variant</v-icon>
         </a>
       </li>
     </ul>
@@ -19,6 +19,10 @@ const guideItems = [
   {
     text: "Performance Guide",
     url: "https://github.com/LunaPixelStudios/Better-MC/wiki/Performance-Guide/"
+  }, 
+  {
+    text: "AdventureZ",
+    url: "https://globoxwiki.com/mods/adventurez/"
   },
   {
     text: "Modpack",
@@ -27,10 +31,6 @@ const guideItems = [
   {
     text: "Modpack Mods",
     url: "https://www.curseforge.com/minecraft/modpacks/better-mc-fabric-bmc1/relations/dependencies"
-  }, 
-  {
-    text: "AdventureZ",
-    url: "https://globoxwiki.com/mods/adventurez/"
   }
 ]
 

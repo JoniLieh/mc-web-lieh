@@ -14,7 +14,7 @@
       </v-col>
     </v-row>
     
-    <p class="text-overline text-error">Modded Minecraft funktioniert zurzeit nur auf der Java-PC-Version</p>
+    <p class="text-overline text-error text-center">Modded Minecraft funktioniert zurzeit nur auf der Java-PC-Version</p>
     <br>
 
     <bmc-features></bmc-features>
@@ -22,10 +22,10 @@
 
     <serverAddress></serverAddress>
     <br>
-    <bmc-installation></bmc-installation>
-    <br>
 
     <bmc-downloads></bmc-downloads>
+    <br>
+    <bmc-installation></bmc-installation>
     <br>
     <bmc-rules></bmc-rules>
     <br>
