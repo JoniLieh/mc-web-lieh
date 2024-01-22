@@ -27,8 +27,12 @@ const config: NuxtConfig = {
       link: [
         { rel: 'icon', type: 'image/png', href: '/images/favicon.ico' },
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&display=swap' }
-      ]
-    }
+      ],
+      charset: 'utf-8',
+      viewport: 'width=device-width, initial-scale=1',
+    },
+    // layoutTransition: { name: 'page', mode: 'out-in' },
+    pageTransition: { name: 'page', mode: 'out-in' }
   },
 
   // Variabes to access on runtime for nuxt backend and public in browser
