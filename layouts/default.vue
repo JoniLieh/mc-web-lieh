@@ -10,10 +10,10 @@
           <slot />
       </v-container>
 
-      <AppBottomNav class="hidden-md-and-up" />
-
+      
     </v-main>
-
+    
+    <!-- <AppBottomNav /> -->
     <AppFooter />
   </v-app>
 </template>

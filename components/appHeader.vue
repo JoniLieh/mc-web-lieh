@@ -8,9 +8,9 @@
           </nuxt-link>
         </v-col>
 
-        <v-col cols="auto" class="hidden-md-and-down">
+        <v-col cols="auto">
           <v-tabs color="primary">
-            <v-tab v-for="{ text, link, icon, color } in links" :key="link" :to="link" :prepend-icon="icon" :text="text" :color="color" />
+            <v-tab v-for="{ text, link, icon, color } in links" :key="link" :to="link" :prepend-icon="icon" :text="text" :color="color" nuxt />
           </v-tabs>
         </v-col>
 
