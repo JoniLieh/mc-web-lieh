@@ -2,24 +2,10 @@
 import type { NuxtConfig } from '@nuxt/types'
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 
-import isDocker from 'is-docker'
-
 // PWA Config
 const title = 'NA - NuxtApp';
 const shortTitle = 'NA - NuxtApp';
 const description = 'My App description'
-
-const { NUXT_PUBLIC_API_BASE, NUXT_API_SECRET, NODE_ENV } = process.env
-const IS_PRODUCTION = NODE_ENV === 'production'
-
-var oldAPIUrl = NUXT_PUBLIC_API_BASE || "http://localhost:33001/api";
-var newAPIUrl = new URL(oldAPIUrl);
-
-// When run in docker, the url is the service name of the docker backend container due to the use of a proxy
-if (isDocker())
-  newAPIUrl.hostname = 'backend';
-
-const proxyTo = (process.browser ? `${NUXT_PUBLIC_API_BASE}` : `${newAPIUrl.toString()}`)
 
 const config: NuxtConfig = {
   app: {

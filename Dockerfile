@@ -25,7 +25,7 @@ WORKDIR /home/bun/frontend/app
 ENV NODE_ENV production
 
 # Copy the rest of the source files into the image.
-COPY frontend .
+COPY . .
 
 # https://github.com/oven-sh/bun/issues/5990#issuecomment-1738422089
 RUN ~/.bun/bin/bun install
