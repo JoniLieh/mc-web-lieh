@@ -28,6 +28,10 @@ const guideItems = [
     text: "Modpack Mods",
     url: "https://www.curseforge.com/minecraft/modpacks/better-mc-fabric-bmc1/relations/dependencies"
   }, 
+  {
+    text: "AdventureZ",
+    url: "https://globoxwiki.com/mods/adventurez/"
+  }
 ]
 
 </script>
