@@ -10,7 +10,7 @@
           <slot />
       </v-container>
 
-      <!-- <AppBottomNav class="hidden-md-and-up" /> -->
+      <AppBottomNav class="hidden-md-and-up" />
 
     </v-main>
 
