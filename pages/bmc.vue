@@ -1,17 +1,18 @@
 <template>
   <div>
     <v-row justify="center" class="my-12">
-      <v-col md="8" xs="12">
+      <v-col lg="6" md="8" xs="12">
         <v-img src="http://media.forgecdn.net/attachments/488/346/logo.png" alt="BETTER MC">
           <template #placeholder>
             <h1 class="text-h1 text-center">BETTER MC</h1>
           </template>
         </v-img>
       </v-col>
+      <v-col cols="12"></v-col>
+      <v-col xl="10" xs="12">
+        <bmc-media></bmc-media>
+      </v-col>
     </v-row>
-
-    <bmc-media></bmc-media>
-    <br>
     
     <p class="text-overline text-error">Modded Minecraft funktioniert zurzeit nur auf der Java-PC-Version</p>
     <br>
