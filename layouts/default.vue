@@ -7,7 +7,7 @@
     <v-main>
       <v-container :class="{ 'main-container': true, 'pa-6': !mobile }" dark>
         <span v-intersect="onIntersect" />
-        <slot />
+          <slot />
       </v-container>
 
       <!-- <AppBottomNav class="hidden-md-and-up" /> -->
