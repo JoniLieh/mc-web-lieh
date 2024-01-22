@@ -16,7 +16,7 @@ docker-compose up -d --build --force-recreate
 > /etc/nginx/sites-enabled/mc.jonilieh.de
 ```
 location / {
-  proxy_pass http://172.16.1.2:30000/;
+  proxy_pass http://127.0.0.1:30000/;
 }
 ```
 
