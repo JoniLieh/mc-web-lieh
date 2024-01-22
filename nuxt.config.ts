@@ -7,6 +7,8 @@ const title = 'NA - NuxtApp';
 const shortTitle = 'NA - NuxtApp';
 const description = 'My App description'
 
+const { NODE_ENV } = process.env
+
 const config: NuxtConfig = {
   app: {
     head: {
@@ -167,7 +169,7 @@ const config: NuxtConfig = {
   },
 
   devtools: {
-    enabled: !IS_PRODUCTION,
+    enabled: NODE_ENV != 'production',
   },
 }
 

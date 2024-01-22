@@ -15,10 +15,6 @@ USER node
 # RUN curl -fsSL https://bun.sh/install | BUN_INSTALL=/usr bash
 RUN curl -fsSL https://bun.sh/install | bash
 
-# copy env file
-WORKDIR /home/bun/frontend
-COPY .env.production .
-
 WORKDIR /home/bun/frontend/app
 
 # Use production node environment by default.
