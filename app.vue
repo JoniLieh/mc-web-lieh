@@ -24,7 +24,7 @@ onMounted(() => {
 
 useSeoMeta({
 	title: 'Minecraft - JoniLieh',
-	ogTitle: 'My Amazing Site',
+	ogTitle: 'Minecraft - JoniLieh',
 	description: 'Minecraft Installation Tutorials.',
 	ogDescription: 'Minecraft Installation Tutorials.'
 })
