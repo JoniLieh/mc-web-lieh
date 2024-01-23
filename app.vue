@@ -5,7 +5,7 @@
 		<NuxtLoadingIndicator />
 
 		<NuxtLayout>
-			<v-sheet class="pa-4 rounded">
+			<v-sheet v-bind="sheetAttrs">
 				<NuxtPage />
 			</v-sheet>
 		</NuxtLayout>
@@ -14,8 +14,19 @@
 
 <script lang="ts" setup>
 import { usePreferredDark } from '@vueuse/core'
-import { useTheme } from 'vuetify'
+import { useTheme, useDisplay } from 'vuetify'
 const theme = useTheme()
+const { mobile } = useDisplay()
+
+watchEffect(() => {
+	console.log(mobile);
+});
+
+const sheetAttrs = computed(() => mobile.value ? {
+	class: "rounded"
+}: {
+	class: "pa-4 rounded"
+});
 
 onMounted(() => {
 	theme.global.name.value = usePreferredDark() ? 'dark' : 'light'
@@ -25,8 +36,8 @@ onMounted(() => {
 useSeoMeta({
 	title: 'Minecraft - JoniLieh',
 	ogTitle: 'Minecraft - JoniLieh',
-	description: 'Minecraft Installation Tutorials.',
-	ogDescription: 'Minecraft Installation Tutorials.'
+	description: 'Minecraft Installations Tutorials',
+	ogDescription: 'Minecraft Installations Tutorials'
 })
 </script>
 
