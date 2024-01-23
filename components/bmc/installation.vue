@@ -1,23 +1,26 @@
 <template>
   <v-alert title="Installation" icon="mdi-wrench" type="info" border="start" variant="tonal">
-      <v-list lines="two" class="installation-list-container" rounded>
-        <v-list-item
-          v-for="(item, index) in installationItems" 
-          :key="index"
-        >
-          <template v-slot:prepend>
-            <span class="mr-5">
-              {{ index + 1 }}.
-            </span>
-          </template>
-          <v-list-item-title v-html="item.title" class="installation-text"></v-list-item-title>
-          <v-list-item-subtitle v-show="!!item.subtitle" v-html="item.subtitle" class="installation-text"></v-list-item-subtitle>
-        </v-list-item>
-      </v-list>
-    </v-alert>
+    <v-list lines="two" class="installation-list-container" rounded>
+      <v-list-item v-for="(item, index) in installationItems" :key="index" :class="mobile ? 'px-0' : ''">
+        <template v-slot:prepend>
+          <span :class="mobile ? 'mr-1' : 'mr-5'">
+            {{ index + 1 }}.
+          </span>
+        </template>
+        <v-list-item-title v-html="item.title" class="installation-text"></v-list-item-title>
+        <v-list-item-subtitle v-show="!!item.subtitle" v-html="item.subtitle"
+          class="installation-text"></v-list-item-subtitle>
+      </v-list-item>
+    </v-list>
+  </v-alert>
 </template>
 
 <script lang="ts" setup>
+import { useDisplay } from 'vuetify';
+
+
+const { mobile } = useDisplay()
+
 interface installationItem {
   title: string;
   subtitle?: string;
@@ -28,11 +31,10 @@ const installationItems: installationItem[] = [
     title: "Stelle sicher, dass du einen Minecraft-Account besitzt und er mit deinem Microsoft-Account verknüpft ist.",
     subtitle: `(Hilfe dazu findest du auch <a href="/#installation">hier</a>)`
   }, {
-    title: "Habe mindestens <code>Java JDK 17</code> installiert ",
-    subtitle: `(<code>Java JRE</code> reicht nicht aus für Mods; Vanilla Minecraft kommt bereits mit eigenem Java, allerdings brauchen Mods die Entwicklungsumgebung von Java)`
+    title: "Habe <code>Java JDK 17</code> installiert",
+    subtitle: `Findest du auch unter Downloads`
   }, {
     title: "Downloade das Modpack und den Client",
-    subtitle: `(Wenn du bereits <code>PrismLauncher</code> besitzt, brauchst du nur natürlich nur noch das Modpack)`
   }, {
     title: "<i><b>(Portable)</b></i> Entpacke <code>PrismLauncher... .zip</code> wo du es wieder findest (zB. auf dem Desktop)",
     subtitle: `(Der <code>Windows-Explorer</code> kann mittlerweile Packen und Entpacken)`
@@ -62,6 +64,7 @@ const installationItems: installationItem[] = [
 .installation-list-container {
   background-color: rgba(255, 255, 255, 0);
 }
+
 .installation-text {
   white-space: normal;
 }
