@@ -55,6 +55,12 @@ export default {
         icon: "mdi-puzzle",
         color: "accent"
       }, 
+      {
+        text: "Server Status",
+        link: "/status",
+        icon: "mdi-server",
+        color: "success"
+      }, 
     ],
   }),
 }

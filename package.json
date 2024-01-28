@@ -3,10 +3,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "nuxt build --dotenv ./.env.production",
-    "dev": "nuxt dev --dotenv ./.env.development",
-    "generate": "nuxt generate --dotenv ./.env.production",
-    "preview": "nuxt preview --dotenv ./.env.production",
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
     "upgrade": "nuxi upgrade",
     "reset": "rm -rf .nuxt node_modules .output package-lock.json && bun install",
     "postinstall": "nuxt prepare",
@@ -27,7 +27,7 @@
     "typescript": "^5.3.3",
     "vue": "^3.4.15",
     "vue-router": "^4.2.5",
-    "vuetify": "^3.5.0",
+    "vuetify": "^3.5.1",
     "vite-plugin-vuetify": "^2.0.1"
   },
   "dependencies": {
