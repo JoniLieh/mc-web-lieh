@@ -56,7 +56,7 @@ export default {
         color: "accent"
       }, 
       {
-        text: "Server Status",
+        text: "Status",
         link: "/status",
         icon: "mdi-server",
         color: "success"
