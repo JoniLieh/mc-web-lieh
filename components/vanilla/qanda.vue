@@ -70,6 +70,11 @@ export default {
           Konsole: Pocket-Edition / Bedrock
 
           `
+        }, {
+          question: 'Ich habe einen Key, wo kann ich den aktivieren?',
+          answer: `
+          Hier kannst du deinen Key aktivieren und mit deinem Microsoft-Konto verknüpfen: <a href="https://www.minecraft.net/de-de/redeem">https://www.minecraft.net/de-de/redeem</a>
+          `
         }
       ]
     }
