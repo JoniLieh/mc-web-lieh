@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="text-h1 text-center">Serverstatus</h1>
+    <h1 class="text-md-h1 text-h3 text-center pt-md-0 pt-4">Serverstatus</h1>
     <br>
     <p class="text-caption text-center">
       <a href="https://ismygameserver.online/minecraft/jonilieh.de" target="_blank">https://ismygameserver.online/minecraft/jonilieh.de <v-icon>mdi-link-variant</v-icon></a>
