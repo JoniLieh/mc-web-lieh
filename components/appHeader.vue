@@ -39,7 +39,7 @@ export default {
   data: () => ({
     links: [
       {
-        text: "Vanilla",
+        text: "Allgemein",
         link: "/",
         icon: "mdi-sword"
       }, 
