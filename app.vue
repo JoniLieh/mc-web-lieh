@@ -18,10 +18,6 @@ import { useTheme, useDisplay } from 'vuetify'
 const theme = useTheme()
 const { mobile } = useDisplay()
 
-watchEffect(() => {
-	console.log(mobile);
-});
-
 const sheetAttrs = computed(() => mobile.value ? {
 	class: "rounded"
 }: {
@@ -29,7 +25,9 @@ const sheetAttrs = computed(() => mobile.value ? {
 });
 
 onMounted(() => {
-	theme.global.name.value = usePreferredDark() ? 'dark' : 'light'
+	if (process.env.NODE_ENV === 'production') {
+		theme.global.name.value = usePreferredDark() ? 'dark' : 'light'
+	}
 });
 
 

@@ -1,0 +1,20 @@
+name: Deploy to Root Server
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: debian-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Deploy to Root Server
+        run: |
+          ssh -i ${{ secrets.SSH_PRIVATE_KEY_DOCKER_USER }} docker_user@5.45.108.162:2222 'cd /home/docker_user/mc-web-lieh && git pull origin main && ./deploy.sh'
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY_DOCKER_USER }}

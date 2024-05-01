@@ -1,18 +1,17 @@
 version: "3.7"
 
 services:
-  frontend:
+  mc-web-lieh:
     build: .                             # use Dockerfile in current dir
-    container_name: frontend_mc_web_lieh
+    container_name: mc-web-lieh
+    image: mc-web-lieh
     restart: on-failure:5
     ports:
       - 30000:3000
     networks:
-      frontend:
-        ipv4_address: 172.16.1.2
-
+      - bridge
 
 networks:
-  frontend:
-    external: true
+  bridge:
+    driver: bridge
       

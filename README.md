@@ -10,7 +10,7 @@ Public Webpage to join the minecraft server
 docker network create --gateway 172.16.1.1 --subnet 172.16.1.0/24 frontend
 
 # to update
-docker-compose up -d --build --force-recreate
+docker compose up -d --build --force-recreate
 ```
 ### check for same ip address(should be ok tho)
 > /etc/nginx/sites-enabled/mc.jonilieh.de

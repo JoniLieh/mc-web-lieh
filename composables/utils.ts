@@ -12,7 +12,6 @@ export default {
     parseError(error: any) {
       if (!error)
         return ""
-      console.log(error);
 
       if (error?.response?.status == 504)
         return "Server API konnte nicht erreicht werden"

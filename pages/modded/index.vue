@@ -52,7 +52,7 @@
 
     <br>
     
-    <v-alert title="Guides" type="accent" icon="mdi-charity" border="start" variant="tonal">
+    <v-alert title="Guides" color="accent" icon="mdi-charity" border="start" variant="tonal">
       <ul>
         <li v-for="(guideItem, guideItemIndex) in guideItems" :key="guideItemIndex">
           <a :href="guideItem.url" target="_blank">
