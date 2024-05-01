@@ -19,4 +19,8 @@ jobs:
           host: your-server
           username: docker_user
           key: ${{ secrets.SSH_PRIVATE_KEY_DOCKER_USER }}
-          script: cd /home/docker_user/mc-web-lieh && git pull origin main && ./deploy.sh
+          passphrase: ${{ secrets.SSH_PRIVATE_KEY_DOCKER_USER_PASSPHRASE }}
+          script: |
+            cd /home/docker_user/mc-web-lieh
+            git pull origin main
+            ./deploy.sh
