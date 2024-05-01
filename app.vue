@@ -24,11 +24,11 @@ const sheetAttrs = computed(() => mobile.value ? {
 	class: "pa-4 rounded"
 });
 
-onMounted(() => {
-	if (process.env.NODE_ENV === 'production') {
-		theme.global.name.value = usePreferredDark() ? 'dark' : 'light'
-	}
-});
+// onMounted(() => {
+// 	if (process.env.NODE_ENV === 'production') {
+// 		theme.global.name.value = usePreferredDark() ? 'dark' : 'light'
+// 	}
+// });
 
 
 useSeoMeta({
