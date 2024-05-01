@@ -13,8 +13,11 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Deploy to Root Server
-        run: |
+      - name: SSH into server and run commands
+        uses: appleboy/ssh-action@master
+        with:
+          host: your-server
+          username: docker_user
+          key: ${{ secrets.SSH_PRIVATE_KEY_DOCKER_USER }}
+          script: |
           ssh -i ${{ secrets.SSH_PRIVATE_KEY_DOCKER_USER }} docker_user@5.45.108.162:2222 'cd /home/docker_user/mc-web-lieh && git pull origin main && ./deploy.sh'
-        env:
-          SSH_PRIVATE_KEY_DOCKER_USER: ${{ secrets.SSH_PRIVATE_KEY_DOCKER_USER }}
