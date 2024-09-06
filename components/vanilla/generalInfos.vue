@@ -76,6 +76,8 @@ export default {
             'ViaVersion',
             'EssentialsX',
             'GeyserMC',
+            'Graves',
+            'GSit'
             // 'McMMO',
             // 'Multiverse',
             // 'WorldEdit',
