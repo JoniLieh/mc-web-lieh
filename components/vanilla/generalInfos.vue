@@ -48,14 +48,14 @@ export default {
   data() {
     return {
       infos: [
-        {
-          heading: 'Stand 20.01.2024',
-          list: [
-            'Better MC Modpack siehe BETTER MC'
-          ],
-          isError: true,
-          isUl: true
-        },
+        // {
+        //   heading: 'Stand 06.09.2024',
+        //   list: [
+        //     'Vanilla Server',
+        //   ],
+        //   isError: true,
+        //   isUl: true
+        // },
         {
           heading: 'Server-Adresse',
           answer: 'jonilieh.de'
@@ -64,7 +64,7 @@ export default {
           heading: 'Besonderes',
           list: [
             'Skills, Leveling und Super Fähigkeiten!',
-            'Es gibt eine Kreativ-Welt, wo ihr euch austoben könnt :)',
+            // 'Es gibt eine Kreativ-Welt, wo ihr euch austoben könnt :)',
             'Für Whitelist, bitte mich anschreiben!',
             'Interaktive Live Karte'
           ]
@@ -72,17 +72,22 @@ export default {
         {
           heading: 'Plugins',
           list: [
-            'McMMO',
-            'Multiverse',
-            'WorldEdit',
-            'WorldGuard',
+            'AuraSkills',
+            'ViaVersion',
+            'EssentialsX',
+            'GeyserMC',
+            // 'McMMO',
+            // 'Multiverse',
+            // 'WorldEdit',
+            // 'WorldGuard',
           ]
         }, {
           heading: 'Nützliches',
           list: [
             '<a href="https://minecraft.fandom.com/de/wiki/Minecraft_Wiki" target="_blank">Minecraft Wiki</a>',
             '<a href="https://minecraft.tools/de" target="_blank">Minecraft Tools - Nützliche MC Werkzeuge</a>',
-            '<a href="https://mcmmo.fandom.com/wiki/Befehle_in_deutscher_Sprache" target="_blank">McMMO Chat Befehle</a>',
+            // '<a href="https://mcmmo.fandom.com/wiki/Befehle_in_deutscher_Sprache" target="_blank">McMMO Chat Befehle</a>',
+            '<a href="https://wiki.aurelium.dev/auraskills" target="_blank">AuraSkills</a>',
           ],
           isUl: true
         }

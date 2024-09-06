@@ -1,33 +1,26 @@
 <template>
-  <v-app>
-    <v-main>
-      <v-container class="fill-height">
-         <v-row justify="center" align="center">
-           <v-col cols="auto" class="text-center">
-             <v-alert type="error" :title="error?.statusCode.toString()" :text="error?.message" variant="tonal" class="elevation-1"></v-alert>
-             <br>
-             <code v-html="error?.stack">
-             </code>
-             <br>
-             <v-btn @click="handleError" color="primary" variant="tonal" size="large"><v-icon start>mdi-home</v-icon>Startseite</v-btn>
-           </v-col>
-         </v-row>
-          
-      </v-container>
-    </v-main>
-
-    <appFooter></appFooter>
-  </v-app>
+  <div class="h-100 d-flex flex-column justify-center align-center">
+    <v-empty-state
+      image="/images/logo.svg"
+      :headline="'Hoppla, ' + statusCode"
+      title="Etwas ist schief gelaufen."
+      :text="constants.ParseError(message) || message"
+    >
+      <v-btn v-if="statusCode == 401" prepend-icon="mdi-login" to="/login" color="primary" variant="outlined" nuxt>Zur Anmeldung</v-btn>
+      <v-btn v-else prepend-icon="mdi-home" to="/" color="primary" variant="outlined" nuxt>Zur Startseite</v-btn>
+    
+    </v-empty-state>
+  </div>
 </template>
 
+<script setup>
+const error = useError();
 
-
-<script lang="ts" setup>
-const props = defineProps({
-  error: Object
-})
-
-console.log("An error just happend, showing error.vue");
-
-const handleError = () => clearError({ redirect: '/' })
+const { statusCode, message } = error.value;
 </script>
+
+<style scoped>
+img {
+  padding: 16px;
+}
+</style>

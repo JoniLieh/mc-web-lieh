@@ -5,9 +5,11 @@
     <back-to-top></back-to-top>
 
     <v-main>
-      <v-container :class="{ 'main-container': true, 'pa-6': !mobile }" dark>
-        <span v-intersect="onIntersect" />
+      <v-container :class="{ 'main-container': true, 'pa-6': !mobile }" class="d-flex h-100 w-100" dark>
+        <div class="my-auto w-100">
+          <span v-intersect="onIntersect" />
           <slot />
+        </div>
       </v-container>
 
       

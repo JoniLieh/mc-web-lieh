@@ -15,23 +15,23 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
-    "@nuxt/types": "^2.17.3",
+    "@nuxt/types": "^2.18.1",
     "@nuxt/typescript-build": "^3.0.2",
-    "@pinia/nuxt": "^0.5.1",
-    "@vite-pwa/assets-generator": "^0.2.4",
-    "@vite-pwa/nuxt": "^0.7.0",
-    "nuxt": "^3.11.2",
+    "@pinia/nuxt": "^0.5.4",
+    "@vite-pwa/assets-generator": "^0.2.6",
+    "@vite-pwa/nuxt": "^0.10.5",
+    "nuxt": "^3.13.1",
     "nuxt-security": "^1.4.3",
-    "pinia": "^2.1.7",
-    "sass": "^1.76.0",
-    "typescript": "^5.4.5",
-    "vue": "^3.4.26",
-    "vue-router": "^4.3.2",
-    "vuetify": "^3.6.1",
-    "vite-plugin-vuetify": "^2.0.3"
+    "pinia": "^2.2.2",
+    "sass": "^1.78.0",
+    "typescript": "^5.5.4",
+    "vue": "^3.5.3",
+    "vue-router": "^4.4.3",
+    "vuetify": "^3.7.1",
+    "vite-plugin-vuetify": "^2.0.4"
   },
   "dependencies": {
     "@mdi/font": "^7.4.47",
-    "@vueuse/core": "^10.9.0"
+    "@vueuse/core": "^11.0.3"
   }
 }
