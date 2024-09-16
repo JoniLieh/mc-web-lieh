@@ -3,13 +3,13 @@
     <slot />
 
 
-    <v-card href="https://mc.jonilieh.de/map" target="_blank" class="mb-2">
+    <v-card href="https://mc.jonilieh.de/map/" target="_blank" class="mb-2">
       <client-only>
         <!-- https://imgur.com/a/Ztq2MIv -->
         <v-img src="https://i.imgur.com/1YLB4fK.png" cover max-height="500px" />
       </client-only>
       <!-- <v-card-text class="caption">
-        <a href="https://mc.jonilieh.de/map" target="_blank">
+        <a href="https://mc.jonilieh.de/map/" target="_blank">
         Rufe die Karte alternativ hier auf
         </a>
         <v-icon small color="primary" right>mdi-open-in-new</v-icon>
