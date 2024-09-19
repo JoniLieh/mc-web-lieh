@@ -19,7 +19,7 @@ const theme = useTheme()
 const { mobile } = useDisplay()
 
 const sheetAttrs = computed(() => mobile.value ? {
-	class: "rounded"
+	class: "pa-4 rounded"
 }: {
 	class: "pa-4 rounded"
 });

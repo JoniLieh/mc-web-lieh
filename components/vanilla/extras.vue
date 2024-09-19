@@ -15,7 +15,7 @@
     </v-list-subheader>
     <v-list-subheader class="font-italic">
       Für einfache Installation: Mods lassen sich auch einfach mit einem Mods-Client zB.:
-      <a class="mx-1" href="https://multimc.org/" target="_blank">MultiMC</a>(empfohlen), <a class="mx-1" href="https://www.curseforge.com/download/app/" target="_blank">CurseForge</a>, ...
+      <a class="mx-1" href="https://prismlauncher.org/" target="_blank">PrismLauncher</a>(empfohlen), <a class="mx-1" href="https://www.curseforge.com/download/app/" target="_blank">CurseForge</a>, ...
       installieren
     </v-list-subheader>
 
@@ -56,6 +56,24 @@ export default {
     return {
       extraItems: [
         {
+          title: "Prismlauncher",
+          type: "prismlauncher",
+          infos: [
+            "Einfache Verwaltung von Mods, Texturenpaketen, Shader und Instanzen",
+            "Einfache Installation von Forge, Fabric, Optifine, Iris, Sodium, ...",
+            "Einfache Updates",
+          ],
+          subtitle:
+            "Empfohlen für Anfänger und Fortgeschrittene",
+          tasks: [
+            `<a href="https://prismlauncher.org/" target="_blank">PrismLauncher</a> herunterladen und installieren`,
+            `Starte PrismLauncher und folge den Anweisungen`,
+            `Füge eine neue Instanz hinzu mit der Version, welche oben angegeben ist (normalerweise die Neueste). Zusätzlich kann noch ein Mod-Loader (Fabric (/Forge)) und Mods hinzugefügt werden`,
+            `Starte die Instanz und spiele!`,
+            `<a href="https://i.imgur.com/ccvZETM.png" target="_blank">Hilfe Bild</a>`
+          ]
+        },
+        {
           title: "Texturenpaket-Installation",
           type: "resourcepack",
           infos: [
@@ -64,7 +82,7 @@ export default {
             "Höhere Auflösungen verfügbar",
           ],
           subtitle:
-            "Empfohlen: Optifine (ohne kommt es u.U. zu Anzeigefehlern bei Texturenpaketen)",
+            "Empfohlen: Optifine / Iris + Sodium (ohne kommt es u.U. zu Anzeigefehlern bei Texturenpaketen)",
           tasks: [
             `Gewünschtes Resource Pack herunterladen<br/>
           <b>Empfehlung</b> Allgemein:&nbsp;<a href="https://bdcraft.net/downloads/vanillabdcraft-minecraft//" target="_blank">VanillaBDcraft</a> 32x - 512x<br/>
