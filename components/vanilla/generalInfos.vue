@@ -73,11 +73,12 @@ export default {
           heading: 'Plugins',
           list: [
             'AuraSkills',
-            'ViaVersion',
             'EssentialsX',
-            'GeyserMC',
+            'GeyserMC for Bedrock',
             'Graves',
-            'GSit'
+            'GSit',
+            'SilkSpawners',
+            'Sleep-Most'
             // 'McMMO',
             // 'Multiverse',
             // 'WorldEdit',

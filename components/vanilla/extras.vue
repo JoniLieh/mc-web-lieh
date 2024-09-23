@@ -2,9 +2,9 @@
   <div>
     <slot />
     
-    <h4 class="text-h4 mb-4 text-error">
+    <h5 class="text-h5 mb-4 text-error">
       Folgendes gilt nur für die Minecraft Java-Edition und Windows!
-    </h4>
+    </h5>
 
     <v-list-subheader class="font-italic">
       Minecraft-Ordner befindet sich unter:&nbsp;
@@ -19,22 +19,29 @@
       installieren
     </v-list-subheader>
 
-    <section v-for="({ title, infos, tasks, subtitle }, index) in extraItems" :key="index" class="mt-6">
+    <section v-for="({ pretitle, title, infos, tasks, subtitle, suffix }, index) in extraItems" :key="index" class="mt-6">
       <h2 class="text-h5 text-primary">
+        <b v-show="!!pretitle" class="mr-1">
+          {{ pretitle }}
+        </b>
         <a :id="title.toLowerCase()" :href="'#'+title.toLowerCase()" class="text-decoration-none text-primary" v-text="title" />
       </h2>
 
-      <v-alert v-if="infos.length" class="my-2" border="start" type="info" density="compact" variant="tonal" prominent>
+      <v-alert v-show="infos.length" class="my-2" border="start" type="info" density="compact" variant="tonal" prominent>
         <ul>
           <li v-for="(info, index2) in infos" :key="index2" class="font-italic" v-html="info" />
         </ul>
       </v-alert>
 
-      <h2 v-if="subtitle" class="text-h6 mb-2" v-html="subtitle" />
+      <h2 v-show="subtitle" class="text-h6 mb-2" v-html="subtitle" />
 
       <ol>
         <li v-for="(task, index2) in tasks" :key="index2" v-html="task" />
       </ol>
+
+      <v-chip v-show="suffix" class="my-2" prepend-icon="mdi-information-outline" variant="tonal" color="accent">
+      {{ suffix }}
+      </v-chip>
     </section>
   </div>
 </template>
@@ -68,10 +75,12 @@ export default {
           tasks: [
             `<a href="https://prismlauncher.org/" target="_blank">PrismLauncher</a> herunterladen und installieren`,
             `Starte PrismLauncher und folge den Anweisungen`,
+            `Importiere eine gegebene Mindecraft Instanz (<a href="https://i.imgur.com/YTCyrMp.png" target="_blank">Hilfe Bild</a>) oder erstelle eine neue`,
             `Füge eine neue Instanz hinzu mit der Version, welche oben angegeben ist (normalerweise die Neueste). Zusätzlich kann noch ein Mod-Loader (Fabric (/Forge)) und Mods hinzugefügt werden`,
             `Starte die Instanz und spiele!`,
             `<a href="https://i.imgur.com/ccvZETM.png" target="_blank">Hilfe Bild</a>`
-          ]
+          ],
+          suffix: "Für Mods, Shader, Texture Packs: Instanz bearbeiten und der linken Leiste folgen"
         },
         {
           title: "Texturenpaket-Installation",
@@ -85,9 +94,9 @@ export default {
             "Empfohlen: Optifine / Iris + Sodium (ohne kommt es u.U. zu Anzeigefehlern bei Texturenpaketen)",
           tasks: [
             `Gewünschtes Resource Pack herunterladen<br/>
-          <b>Empfehlung</b> Allgemein:&nbsp;<a href="https://bdcraft.net/downloads/vanillabdcraft-minecraft//" target="_blank">VanillaBDcraft</a> 32x - 512x<br/>
-          <b>Empfehlung</b> für gute PCs:&nbsp;<a href="https://www.chromahills.com/" target="_blank">Chroma Hills</a> 128x<br/>
-          <b>Empfehlung</b> für schlechte PCs:&nbsp;<a href="https://faithful.team/" target="_blank">Faithful</a> 32x
+          <b>Empfehlung</b> Allgemein:&nbsp;<a href="https://bdcraft.net/downloads/vanillabdcraft-minecraft/" target="_blank">VanillaBDcraft 32x - 512x</a> , <a href="https://www.curseforge.com/minecraft/texture-packs/alacrity" target="_blank">Alacrity 32x</a><br/>
+          <b>Empfehlung</b> für gute PCs:&nbsp;<a href="https://www.chromahills.com/" target="_blank">Chroma Hills 128x</a><br/>
+          <b>Empfehlung</b> für schlechte PCs:&nbsp;<a href="https://faithful.team/" target="_blank">Faithful 32x</a> , <a href="https://www.curseforge.com/minecraft/texture-packs/alacrity" target="_blank">Alacrity 32x</a><br/>
           `,
             `
           Die heruntergeladene Datei unter <a @click="copyText('%appdata%\\.minecraft\\resourcepacks')">%appdata%\\.minecraft\\resourcepacks</a> ablegen
@@ -114,7 +123,7 @@ export default {
         },{
           title: `OptiFine-Installation`,
           type: "optifine",
-          subtitle: `(Alternative: <a href="https://irisshaders.net/download" target="_blank">Iris Shaders</a>)`,
+          subtitle: `(Alternative und Empfohlen: <a href="https://irisshaders.net/download" target="_blank">Iris Shaders</a>)`,
           infos: [
             "Höhere Bildrate (FPS) im Spiel",
             "Feinere Grafikeinstellungen",

@@ -54,7 +54,8 @@ export default {
       Kaufen für:
       <a href="https://www.minecraft.net/store/minecraft-java-edition/buy" target="_blank">Windows</a>`,
       'Geht durch den Kaufprozess, erstellt euren Account und vergebt euch einen Namen',
-      'Loggt euch auf <a href="https://www.minecraft.net" target="_blank">Minecraft.net</a> ein und ladet Minecraft herunter <a href="https://launcher.mojang.com/download/MinecraftInstaller.exe" target="_blank">Minecraft-Installer</a>',
+      'Folgt am besten nun den Anweisungen für den PrismLauncher<a href="#prismlauncher">PrismLauncher</a> weiter unten',
+      'Alternativ: Loggt euch auf <a href="https://www.minecraft.net" target="_blank">Minecraft.net</a> ein und ladet Minecraft herunter <a href="https://launcher.mojang.com/download/MinecraftInstaller.exe" target="_blank">Minecraft-Installer</a>',
       'Installiert den Client(MinecraftInstaller.exe), startet ihn und loggt euch auch dort ein(oben links steht euer Microsoft-Account)',
       'Ladet euch dort die neueste Vollversion herunter und geht anschließend auf "Spielen"'
     ],

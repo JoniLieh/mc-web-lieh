@@ -4,7 +4,7 @@
       Modded
     </h1>
     <br>
-    <h2 class="text-sm-h2 text-h3">
+    <h2 class="text-sm-h2 text-h4">
       Allgemeine Infos
     </h2>
     <br>

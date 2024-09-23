@@ -68,12 +68,48 @@ export default {
           Handy/Tablet: Pocket-Edtion
           <br/>
           Konsole: Pocket-Edition / Bedrock
-
           `
         }, {
           question: 'Ich habe einen Key, wo kann ich den aktivieren?',
           answer: `
           Hier kannst du deinen Key aktivieren und mit deinem Microsoft-Konto verknüpfen: <a href="https://www.minecraft.net/de-de/redeem">https://www.minecraft.net/de-de/redeem</a>
+          `
+        }, {
+          question: 'Ich brauche eine bestimmte Java-Version, wo bekomme ich die?',
+          answer: `
+          Es ist wichtig, dass du die JDK-Version installiert hast.
+          <br/>
+          Wähle die gewünschte Version aus (höchstwahrscheinlich 21), das Betriebssystem (Windows, Linux, Mac) und anschließend den Installer.
+          <br/>
+          Hier kannst du die Java-Version herunterladen: <a href="https://www.oracle.com/de/java/technologies/downloads/">Java Download</a>
+          <br/>
+          <a target="_blank" href="https://i.imgur.com/KxrIBGY.png">Hilfe Bild</a>
+          <br/>
+          <b>Wichtig für PrismLauncher:</b> Wähle die neue Version im Launcher aus: "Einstellungen" -> "Java" -> "Auto-Erkennung" -> "<deine Version>" -> "OK"
+          `
+        }, {
+          question: 'Mein Videotreiber ist veraltet, wo bekomme ich den Neusten?',
+          answer: `
+          Um zu sehen, welche Grafikkarte du hast, drücke die Tastenkombination "Windows-Taste + R" und gebe "dxdiag" ein und klicke auf "Anzeige". Alternativ: Im Geräte-Manager.
+          <br/>
+          Hier kannst du den neusten Treiber für deine Grafikkarte herunterladen: <a href="https://www.nvidia.com/de-de/geforce/drivers/">Nvidia GameReady</a>, <a href="https://www.amd.com/de/support/download/drivers.html">AMD</a>
+          <br/>
+          <a target="_blank" href="https://i.imgur.com/8p0Nsy6.png">Hilfe Bild</a>
+          `
+        }, {
+          question: 'Wie importiere ich ein bestehendes Modpack / Minecraft-Installation?',
+          answer: `
+          1. Benutze den richtigen Launcher (z.B. PrismLauncher)
+          <br/>
+          2. oben links auf "Instanz hinzufügen" 
+          <br/>
+          3. "Importieren" 
+          <br/>
+          4. "Durchsuchen"
+          <br/>
+          5. navigiere zu der heruntergeladen Modpack.zip-Datei
+          <br/>
+          <a target="_blank" href="https://i.imgur.com/YTCyrMp.png">Hilfe Bild</a>
           `
         }
       ]

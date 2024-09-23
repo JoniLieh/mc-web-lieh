@@ -4,7 +4,7 @@
       <v-col lg="6" md="8" xs="12">
         <v-img src="https://media.forgecdn.net/attachments/488/346/logo.png" alt="BETTER MC">
           <template #placeholder>
-            <h1 class="text-h1 text-center">BETTER MC</h1>
+            <h1 class="text-h1 text-sm-h3 text-center">BETTER MC</h1>
           </template>
         </v-img>
       </v-col>

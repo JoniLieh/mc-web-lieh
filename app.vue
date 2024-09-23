@@ -5,7 +5,7 @@
 		<NuxtLoadingIndicator />
 
 		<NuxtLayout>
-			<v-sheet v-bind="sheetAttrs">
+			<v-sheet class="pa-4 rounded">
 				<NuxtPage />
 			</v-sheet>
 		</NuxtLayout>
@@ -17,12 +17,6 @@ import { usePreferredDark } from '@vueuse/core'
 import { useTheme, useDisplay } from 'vuetify'
 const theme = useTheme()
 const { mobile } = useDisplay()
-
-const sheetAttrs = computed(() => mobile.value ? {
-	class: "pa-4 rounded"
-}: {
-	class: "pa-4 rounded"
-});
 
 onMounted(() => {
 	if (process.env.NODE_ENV === 'production') {

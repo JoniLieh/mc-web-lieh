@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar flat>
+  <v-app-bar scroll-behavior="elevate" elevation="1" style="border-top-left-radius: 0 !important; border-top-right-radius: 0 !important" rounded>
     <v-container>
       <v-row align="center">
         <v-col cols="auto">

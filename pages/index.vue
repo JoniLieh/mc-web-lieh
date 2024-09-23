@@ -1,9 +1,9 @@
 <template>
   <div>
-    <h1 class="my-12 text-sm-h1 text-h2">
+    <h1 class="my-6 text-h2 text-lg-h1">
       Willkommen
     </h1>
-    <h2 class="my-12 text-sm-h2 text-h3">
+    <h2 class="my-6 text-h3 text-lg-h2">
       Gliederung
     </h2>
 
