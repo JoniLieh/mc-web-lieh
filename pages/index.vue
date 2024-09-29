@@ -61,6 +61,7 @@ import JoinComponent from '~/components/vanilla/join.vue'
 import GeneralInfosComponent from '~/components/vanilla/generalInfos.vue'
 import ExtraComponent from '~/components/vanilla/extras.vue'
 import MapComponent from '~/components/vanilla/map.vue'
+import DownloadComponent from '~/components/vanilla/downloads.vue'
 
 
 export default {
@@ -90,8 +91,13 @@ export default {
         link: '#rules',
         component: shallowRef(RulesComponent)
       }, {
-        heading: 'Installation',
+        heading: 'Downloads',
         headingIcon: 'mdi-download',
+        link: '#downloads',
+        component: shallowRef(DownloadComponent)
+      }, {
+        heading: 'Installation',
+        headingIcon: 'mdi-monitor-arrow-down',
         link: '#installation',
         component: shallowRef(InstallationComponent)
       }, {

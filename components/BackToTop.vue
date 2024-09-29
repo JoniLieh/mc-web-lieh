@@ -7,6 +7,7 @@
       location="bottom end"
       elevation="8"
       icon="mdi-chevron-up"
+      size="large"
       fixed
       app
       appear

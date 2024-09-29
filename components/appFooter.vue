@@ -9,7 +9,7 @@
       v-model="dialog"
     >
       <template v-slot:activator="{ props }">
-				<v-btn v-bind="props" color="info" size="small" variant="text" class="mr-12">Haftung</v-btn>
+				<v-btn v-bind="props" color="theme-variant" size="small" variant="text" class="mr-12">Haftung</v-btn>
       </template>
 
       <v-card title="Disclaimer">
@@ -42,7 +42,7 @@
 					</p>
         </v-card-text>
         <v-card-actions>
-          <v-btn color="info" block @click="dialog = false" variant="tonal">
+          <v-btn color="theme-variant" block @click="dialog = false">
 						<v-icon start>mdi-close</v-icon>Schließen</v-btn>
         </v-card-actions>
       </v-card>

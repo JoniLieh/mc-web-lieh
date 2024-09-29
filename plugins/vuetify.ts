@@ -32,11 +32,11 @@ export default defineNuxtPlugin((app) => {
         darken: 4,
       },
     },
-    defaults: {
-      global: {
-        rounded: "lg",
-      }
-    }
+    // defaults: {
+    //   global: {
+    //     rounded: "lg",
+    //   }
+    // }
 
   })
   app.vueApp.use(vuetify)
