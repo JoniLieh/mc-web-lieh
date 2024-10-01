@@ -85,7 +85,7 @@ export default {
           <br/>
           <a target="_blank" href="https://i.imgur.com/KxrIBGY.png">Hilfe Bild</a>
           <br/>
-          <b>Wichtig für PrismLauncher:</b> Wähle die neue Version im Launcher aus: "Einstellungen" -> "Java" -> "Auto-Erkennung" -> "<deine Version>" -> "OK"
+          <b>Wichtig für PrismLauncher:</b> Wähle die neue Version im Launcher aus: "Einstellungen" -> "Java" -> "Auto-Erkennung" -> "&#10094;deine Version&#10095;" -> "OK"
           `
         }, {
           question: 'Mein Videotreiber ist veraltet, wo bekomme ich den Neusten?',
@@ -110,6 +110,13 @@ export default {
           5. navigiere zu der heruntergeladen Modpack.zip-Datei
           <br/>
           <a target="_blank" href="https://i.imgur.com/YTCyrMp.png">Hilfe Bild</a>
+          `
+        }, {
+          question: 'Ich muss mich erneut anmelden im PrismLauncher',
+          answer: `
+          Oben rechts das Konto entfernen und erneut deinen Minecraft-Account mit dem Launcher verbinden.
+          <br/>
+          <a target="_blank" href="https://i.imgur.com/wpjuPt4.png">Hilfe Bild</a>
           `
         }
       ]
