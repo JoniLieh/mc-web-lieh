@@ -86,6 +86,8 @@ export default {
           <a target="_blank" href="https://i.imgur.com/KxrIBGY.png">Hilfe Bild</a>
           <br/>
           <b>Wichtig für PrismLauncher:</b> Wähle die neue Version im Launcher aus: "Einstellungen" -> "Java" -> "Auto-Erkennung" -> "&#10094;deine Version&#10095;" -> "OK"
+          <br/>
+          <a target="_blank" href="https://i.imgur.com/56G0P1X.png">Hilfe Bild</a>
           `
         }, {
           question: 'Mein Videotreiber ist veraltet, wo bekomme ich den Neusten?',
