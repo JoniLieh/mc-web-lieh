@@ -1,7 +1,7 @@
 <template>
   <v-alert title="Server-Adresse" icon="mdi-web" type="success" border="start" variant="tonal">
     <span class="text-primary">
-      jonilieh.de
+      joni.li
     </span>
   </v-alert>
 </template>

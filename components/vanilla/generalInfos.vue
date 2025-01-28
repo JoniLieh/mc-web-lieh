@@ -58,7 +58,7 @@ export default {
         // },
         {
           heading: 'Server-Adresse',
-          answer: 'jonilieh.de'
+          answer: 'joni.li'
         },
         {
           heading: 'Besonderes',

@@ -26,7 +26,7 @@ export default {
         '(Stell sicher, dass du einen <a href="https://login.live.com/login.srf" target="_blank">Microsoft-Account</a> hast)',
         'Starte Minecraft',
         'Gehe auf Mehrspieler',
-        'Füge einen neuen Server hinzu mit einem beliebigen Namen und der Serveradresse <b class="primary-text">jonilieh.de</b>',
+        'Füge einen neuen Server hinzu mit einem beliebigen Namen und der Serveradresse <b class="primary-text">joni.li</b>',
         'Trete den nun auffindbaren Server bei, es sollte eine Fehlermeldung im Zusammenhang mit der Whitelist geben',
         `
         Kontaktiere mich um auf die Whitelist(Ausnahmeliste) zu kommen, ich brauche dafür den Gamertag von eurem Microsoftkonto bzw. Minecraftnamen

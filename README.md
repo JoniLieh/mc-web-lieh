@@ -1,7 +1,7 @@
 # mc-web-lieh
 
 Public Webpage to join the minecraft server
-[https://mc.jonilieh.de](https://mc.jonilieh.de)
+[https://mc.joni.li](https://mc.joni.li)
 
 ## Setup on server
 > /usr/src/mc-web-lieh
@@ -13,7 +13,7 @@ docker network create --gateway 172.16.1.1 --subnet 172.16.1.0/24 frontend
 docker compose up -d --build --force-recreate
 ```
 ### check for same ip address(should be ok tho)
-> /etc/nginx/sites-enabled/mc.jonilieh.de
+> /etc/nginx/sites-enabled/mc.joni.li
 ```
 location / {
   proxy_pass http://127.0.0.1:30000/;
