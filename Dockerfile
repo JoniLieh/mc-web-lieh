@@ -1,38 +1,74 @@
 # syntax=docker/dockerfile:1
 
-# Comments are provided throughout this file to help you get started.
-# If you need more help, visit the Dockerfile reference guide at
-# https://docs.docker.com/engine/reference/builder/
-
-# oven/bun not working with bun install "error: zlib.BrotliDecompress is not implemented" https://github.com/oven-sh/bun/issues/5990#issuecomment-1738422089
-FROM node:lts-bullseye-slim
+# Build stage
+FROM node:lts-bullseye-slim AS builder
 
 RUN apt-get -y update \
   && apt-get -y install curl \
-  && apt-get -y install unzip \
   && rm -rf /var/lib/apt/lists/*
-# Run the application as a non-root user and copy files
-USER node 
 
-# RUN curl -fsSL https://bun.sh/install | BUN_INSTALL=/usr bash
+# Install bun
 RUN curl -fsSL https://bun.sh/install | bash
 
-WORKDIR /home/bun/frontend
+WORKDIR /app
 
-# Use production node environment by default.
-ENV NODE_ENV production
+# Copy package files
+COPY package.json bun.lock* ./
 
-# Copy the rest of the source files into the image.
+# Install dependencies
+RUN /root/.bun/bin/bun install --frozen-lockfile
+
+# Copy source code
 COPY . .
 
-# https://github.com/oven-sh/bun/issues/5990#issuecomment-1738422089
-RUN ~/.bun/bin/bun install
+# Generate static site
+ENV NODE_ENV=production
+RUN /root/.bun/bin/bun run generate
 
-# built project
-RUN ~/.bun/bin/bun run build
+# Production stage - super lightweight nginx
+FROM nginx:alpine
 
-ENV HOST 0.0.0.0
-EXPOSE 3000
+# Copy custom nginx config
+COPY <<EOF /etc/nginx/conf.d/default.conf
+server {
+    listen 80;
+    server_name localhost;
+    root /usr/share/nginx/html;
+    index index.html;
 
-# Run the application.
-CMD ~/.bun/bin/bun run start
+    # Gzip compression
+    gzip on;
+    gzip_vary on;
+    gzip_min_length 1024;
+    gzip_types text/css text/javascript application/javascript application/json image/svg+xml;
+
+    # Cache static assets
+    location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+    }
+
+    # SPA fallback
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    # Security headers
+    add_header X-Frame-Options "SAMEORIGIN" always;
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header X-XSS-Protection "1; mode=block" always;
+}
+EOF
+
+# Copy built static files from builder
+COPY --from=builder /app/.output/public /usr/share/nginx/html
+
+# Expose port
+EXPOSE 80
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+  CMD wget --quiet --tries=1 --spider http://localhost/ || exit 1
+
+# Run nginx
+CMD ["nginx", "-g", "daemon off;"]

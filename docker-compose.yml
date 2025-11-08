@@ -2,14 +2,31 @@ version: "3.7"
 
 services:
   mc-web-lieh:
-    build: .                             # use Dockerfile in current dir
+    build: 
+      context: .
+      dockerfile: Dockerfile
     container_name: mc-web-lieh
     image: mc-web-lieh
-    restart: on-failure:5
+    restart: unless-stopped
     ports:
-      - 127.0.0.1:30000:3000
+      - 127.0.0.1:30000:80
     networks:
       - bridge
+    # Minimal resources needed for nginx
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+          cpus: '0.5'
+        reservations:
+          memory: 64M
+          cpus: '0.25'
+    # Optional: Traefik labels (if you want to use Docker provider)
+    # labels:
+    #   - "traefik.enable=true"
+    #   - "traefik.http.routers.mc-web-lieh.rule=Host(`mc.joni.li`)"
+    #   - "traefik.http.routers.mc-web-lieh.tls=true"
+    #   - "traefik.http.services.mc-web-lieh.loadbalancer.server.port=80"
 
 networks:
   bridge:

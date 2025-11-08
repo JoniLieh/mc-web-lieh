@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch: # Manual trigger option
 
 jobs:
   deploy:
@@ -11,17 +12,24 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: SSH into server and run commands
-        uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@v1.0.3
         with:
-          host: 5.45.108.162
+          host: 152.53.239.250
           port: 2222
           username: docker_user
           key: ${{ secrets.SSH_PRIVATE_KEY_DOCKER_USER }}
           passphrase: ${{ secrets.SSH_PRIVATE_KEY_DOCKER_USER_PASSPHRASE }}
+          command_timeout: 30m
           script: |
+            set -e
+            echo "🔄 Pulling latest changes..."
             cd /home/docker_user/mc-web-lieh
             git pull origin main
+            
+            echo "🐳 Building and deploying..."
             ./deploy.sh
+            
+            echo "✅ Deployment completed successfully!"
