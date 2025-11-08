@@ -2,14 +2,19 @@
 import type { NuxtConfig } from '@nuxt/types'
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 
+import { createResolver } from 'nuxt/kit'
+const { resolve } = createResolver(import.meta.url)
+
 // PWA Config
-const title = 'NA - NuxtApp';
-const shortTitle = 'NA - NuxtApp';
-const description = 'My App description'
+const title = 'Minecraft - JoniLieh';
+const shortTitle = 'MC - JoniLieh';
+const description = 'Minecraft Server - JoniLieh'
 
 const { NODE_ENV } = process.env
 
 const config: NuxtConfig = {
+  ssr: true,
+  
   app: {
     head: {
       link: [
@@ -23,7 +28,7 @@ const config: NuxtConfig = {
     pageTransition: { name: 'page', mode: 'out-in' }
   },
 
-  // Variabes to access on runtime for nuxt backend and public in browser
+  // Variables to access on runtime for nuxt backend and public in browser
   runtimeConfig: {
     public: {}
   },
@@ -70,10 +75,21 @@ const config: NuxtConfig = {
   },
   // https://nitro.unjs.io/guide/routing#route-rules
   nitro: {
+    preset: 'static',
     esbuild: {
       options: {
         target: 'esnext',
       },
+    },
+    prerender: {
+      crawlLinks: true,
+      routes: [
+        '/',
+        '/atm',
+        '/bmc',
+        '/modded',
+        '/status'
+      ]
     }
   },
   
@@ -166,6 +182,15 @@ const config: NuxtConfig = {
       '../types/*.ts',
       '../types/**/*.ts'
     ]
+  },
+
+  typescript: {
+    nodeTsConfig: {
+        include: [
+            resolve('./types/**/*.ts'),
+            resolve('./types/**/*.d.ts'),
+        ],
+    },
   },
 
   devtools: {

@@ -13,7 +13,7 @@
 <script lang="ts" setup>
 const guideItems = [
   {
-    text: "Offizielles Mindecraft Wiki",
+    text: "Offizielles Minecraft Wiki",
     url: "https://minecraft.fandom.com/de/wiki/Minecraft_Wiki"
   }, 
   {

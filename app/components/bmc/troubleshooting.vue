@@ -38,12 +38,12 @@ const errorItems = [
   },{
     title: `Mods sind nicht mehr aktuell / unterschiedliche Mods`,
     steps: [
-      `Bezieht das Modpack erneut und installiert es wie beschrieben`
+      `Ladet das Modpack erneut herunter und installiert es wie beschrieben`
     ]
   },{
     title: `Installation hängt bei 99%`,
     steps: [
-      `Starte den Download neu, ggfls. Launcher auch`
+      `Starte den Download neu, ggf. auch den Launcher`
     ]
   }
 ]

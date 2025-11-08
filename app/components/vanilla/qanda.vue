@@ -90,11 +90,11 @@ export default {
           <a target="_blank" href="https://i.imgur.com/56G0P1X.png">Hilfe Bild</a>
           `
         }, {
-          question: 'Mein Videotreiber ist veraltet, wo bekomme ich den Neusten?',
+          question: 'Mein Videotreiber ist veraltet, wo bekomme ich den neuesten?',
           answer: `
-          Um zu sehen, welche Grafikkarte du hast, drücke die Tastenkombination "Windows-Taste + R" und gebe "dxdiag" ein und klicke auf "Anzeige". Alternativ: Im Geräte-Manager.
+          Um zu sehen, welche Grafikkarte du hast, drücke die Tastenkombination "Windows-Taste + R" und gib "dxdiag" ein und klicke auf "Anzeige". Alternativ: Im Geräte-Manager.
           <br/>
-          Hier kannst du den neusten Treiber für deine Grafikkarte herunterladen: <a href="https://www.nvidia.com/de-de/geforce/drivers/">Nvidia GameReady</a>, <a href="https://www.amd.com/de/support/download/drivers.html">AMD</a>
+          Hier kannst du den neuesten Treiber für deine Grafikkarte herunterladen: <a href="https://www.nvidia.com/de-de/geforce/drivers/">Nvidia GameReady</a>, <a href="https://www.amd.com/de/support/download/drivers.html">AMD</a>
           <br/>
           <a target="_blank" href="https://i.imgur.com/8p0Nsy6.png">Hilfe Bild</a>
           `

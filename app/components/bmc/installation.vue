@@ -44,7 +44,7 @@ const installationItems: installationItem[] = [
   }, {
     title: "Gehe den Installationsassistenten vom <code>PrismLauncher</code> durch."
   }, {
-    title: "Verknüpfte deinen Minecraft-Account mit dem <code>PrismLauncher</code> (oben rechts im Launcher)"
+    title: "Verknüpfe deinen Minecraft-Account mit dem <code>PrismLauncher</code> (oben rechts im Launcher)"
   }, {
     title: `Füge nun das Modpack hinzu, indem du oben links auf <code>"Instanz hinzufügen"</code> gehst, danach auf <code>"Importieren"</code> und anschließend <code>"Durchsuchen"</code>, nun navigiere zu der heruntergeladen <code>Better MC... .zip</code>-Datei`,
     subtitle: `<a href="https://i.imgur.com/YTCyrMp.png" target="_blank">Hilfe Bild</a>`
@@ -55,7 +55,7 @@ const installationItems: installationItem[] = [
     title: `Ändere noch die <code>RAM</code>-Zuweisung in den Einstellungen vom <code>PrismLauncher</code>, in der Regel die Hälfte von deinem totalen Arbeitsspeicher ich empfehle mind. 8GB.`,
     subtitle: `<a href="https://i.imgur.com/xIgWoQM.png" target="_blank">Hilfe Bild</a>`
   }, {
-    title: `Ggfls. änderst noch Maus-, Tastatur & Grafikeinstellungen in Minecraft, <b>F11 für Vollbildmodus</b>`
+    title: `Ggf. änderst du noch Maus-, Tastatur- & Grafikeinstellungen in Minecraft, <b>F11 für Vollbildmodus</b>`
   }
 ]
 </script>

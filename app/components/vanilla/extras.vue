@@ -14,8 +14,8 @@
       </a>
     </v-list-subheader>
     <v-list-subheader class="font-italic">
-      Für einfache Installation: Mods lassen sich auch einfach mit einem Mods-Client zB.:
-      <a class="mx-1" href="https://prismlauncher.org/" target="_blank">PrismLauncher</a>(empfohlen), <a class="mx-1" href="https://www.curseforge.com/download/app/" target="_blank">CurseForge</a>, ...
+      Für einfache Installation: Mods lassen sich auch einfach mit einem Mods-Client wie z.B.:
+      <a class="mx-1" href="https://prismlauncher.org/" target="_blank">PrismLauncher</a> (empfohlen), <a class="mx-1" href="https://www.curseforge.com/download/app/" target="_blank">CurseForge</a>, ...
       installieren
     </v-list-subheader>
 
@@ -46,9 +46,6 @@
   </div>
 </template>
 
-* minecraft version
-* Karte aktualisiert sich alle 24h
-
 <script setup>
 import { useClipboard } from '@vueuse/core'
 
@@ -67,7 +64,7 @@ export default {
           type: "prismlauncher",
           infos: [
             "Einfache Verwaltung von Mods, Texturenpaketen, Shader und Instanzen",
-            "Einfache Installation von Forge, Fabric, Optifine, Iris, Sodium, ...",
+            "Einfache Installation von Forge, Fabric, Iris, Sodium, ...",
             "Einfache Updates",
           ],
           subtitle:
@@ -91,11 +88,10 @@ export default {
             "Höhere Auflösungen verfügbar",
           ],
           subtitle:
-            "Empfohlen: Optifine / Iris + Sodium (ohne kommt es u.U. zu Anzeigefehlern bei Texturenpaketen)",
+            "Empfohlen: Iris + Sodium (ohne kommt es u.U. zu Anzeigefehlern bei Texturenpaketen)",
           tasks: [
             `Gewünschtes Resource Pack herunterladen<br/>
           <b>Empfehlung</b> Allgemein:&nbsp;<a href="https://bdcraft.net/downloads/vanillabdcraft-minecraft/" target="_blank">VanillaBDcraft 32x - 512x</a> , <a href="https://www.curseforge.com/minecraft/texture-packs/alacrity" target="_blank">Alacrity 32x</a><br/>
-          <b>Empfehlung</b> für gute PCs:&nbsp;<a href="https://www.chromahills.com/" target="_blank">Chroma Hills 128x</a><br/>
           <b>Empfehlung</b> für schlechte PCs:&nbsp;<a href="https://faithful.team/" target="_blank">Faithful 32x</a> , <a href="https://www.curseforge.com/minecraft/texture-packs/alacrity" target="_blank">Alacrity 32x</a><br/>
           `,
             `
@@ -107,33 +103,34 @@ export default {
         },
         {
           title: "Shader Schnellinstallation ",
+          subtitle: "Empfohlen: Prismlauncher und dort Iris + Shader installieren",
           infos: [
             //'<span class="success--text">Da Optifine auf der 1.19 derzeit noch keinen Shader unterstützt, hier eine Alternative</span>'
           ],
-          subtitle:
-            "Hier wird auf Iris anstatt Optifine gesetzt<small>(Ansonsten einfach OptiFine anstatt Iris installieren)</small>",
           tasks: [
-            `<a href="https://irisshaders.net/download" target="_blank">Iris Shaders</a> → "Universelle Jar herunterladen"`,
+            `<a href="https://irisshaders.dev/download" target="_blank">Iris Shaders</a> → "Universelle Jar herunterladen"`,
             `<a href="https://bitslablab.com/bslshaders/#download" target="_blank">BSL Shaders</a> → "Download BSL v8.x.x"`,
             `BSL Shaders-Datei in <code>.minecraft\\shaderpacks</code> legen`,
             `Starte Minecraft`,
             `Öffne <code>Options, Video Settings, Shaders</code><small>(Für Iris)</small>`,
             `Lege "BSL Shaders" fest`
           ]
-        },{
-          title: `OptiFine-Installation`,
-          type: "optifine",
-          subtitle: `(Alternative und Empfohlen: <a href="https://irisshaders.net/download" target="_blank">Iris Shaders</a>)`,
-          infos: [
-            "Höhere Bildrate (FPS) im Spiel",
-            "Feinere Grafikeinstellungen",
-            "Mit der C-Taste zoomen(Taste kann im Menü geändert werden)",
-          ],
-          tasks: [
-            'Neueste Version von <a href="https://www.optifine.net/downloads" target="_blank">OptiFine herunterladen</a> (Vorsicht bei Download, keine falschen Links anklicken, falls verfügbar oben rechts "SKIP" ODER einfach "Mirror" herunterladen)',
-            "<a>.jar</a> ausführen und im Minecraft-Pfad(muss normalerweise nicht geändert werden) installieren",
-          ],
-        }, {
+        },
+        // {
+        //   title: `Iris + Sodium-Installation`,
+        //   type: "iris",
+        //   subtitle: `(Alternative und Empfohlen: <a href="https://irisshaders.dev/download" target="_blank">Iris Shaders</a>)`,
+        //   infos: [
+        //     "Höhere Bildrate (FPS) im Spiel",
+        //     "Feinere Grafikeinstellungen",
+        //     "Mit der C-Taste zoomen(Taste kann im Menü geändert werden)",
+        //   ],
+        //   tasks: [
+        //     'Neueste Version von <a href="https://irisshaders.dev/download" target="_blank">Iris Shaders</a> herunterladen.',
+        //     "<a>.jar</a> ausführen und im Minecraft-Pfad(muss normalerweise nicht geändert werden) installieren",
+        //   ],
+        // }, 
+        {
           title: "Shader-Installation",
           type: "shader",
           infos: [
@@ -142,7 +139,7 @@ export default {
             "Unterschiedlichste Shader möglich",
             'Es gibt auch bereits&nbsp;<a href="https://minecraft.fandom.com/de/wiki/Shader" target="_blank">nativ integrierte Shader</a>',
           ],
-          subtitle: "Voraussetzung: Optifine oder Iris",
+          subtitle: "Voraussetzung: Iris",
           tasks: [
             'Gewünschtes&nbsp;<a href="https://shaders.fandom.com/wiki/Shader_Packs" target="_blank">Shaderpack herunterladen</a> (<b>Empfehlung</b>: <a href="https://bitslablab.com/bslshaders/#download" target="_blank">BSL Shaders</a> oder <a href="https://www.sonicether.com/seus/" target="_blank">SEUS Renewed</a>; auch hier wieder aufpassen, auf keine falschen Links klicken)',
             `Die heruntergeladene Datei unter <a @click="copyText('%appdata%\\.minecraft\\shaderpacks')">

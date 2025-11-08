@@ -41,12 +41,12 @@
     <v-alert title="Regeln" icon="mdi-alert" type="error" border="start" variant="text">
       <ul>
         <li>Gleiche Regeln wie bei <nuxt-link to="/#rules">Vanilla</nuxt-link></li>
-        <li>Der Server hat eine Anzahl an Chunks vorgeneriert, wenn wir also merkt, dass ihr neue Chunks generiert, haltet euch ein wenig zurück für die anderen Spieler :) 
+        <li>Der Server hat eine Anzahl an Chunks vorgeneriert, wenn ihr also merkt, dass neue Chunks generiert werden, haltet euch ein wenig zurück für die anderen Spieler :) 
           <br>
-          <small class="caption">(Server hat leider nur begrenzen RAM)</small>
+          <small class="caption">(Server hat leider nur begrenzten RAM)</small>
         </li>
         <li>Merkt euch, wo ihr Chunk Loader verwendet, auch Quarrys sind Chunk Loader!</li>
-        <li>Haltet euch nicht in ungeladeten Chunks auf, wartet in einem geladenem Chunk und lasst den Server rendern</li>
+        <li>Haltet euch nicht in ungeladenen Chunks auf, wartet in einem geladenen Chunk und lasst den Server rendern</li>
       </ul>
     </v-alert>
 
@@ -173,13 +173,13 @@ const errorItems = [
   },{
     title: `Mods sind nicht mehr aktuell / unterschiedliche Mods`,
     steps: [
-      `Bezieht das Modpack erneut und installiert es erneut`,
+      `Ladet das Modpack erneut herunter und installiert es`,
       `Aktualisiert eure Mods im PrismLauncher <a href="https://i.imgur.com/eeya0YW.png" target="_blank">Hilfe Bild</a>`
     ]
   },{
     title: `Installation hängt bei 99%`,
     steps: [
-      `Neustarte den Download, ggfls. Launcher neustarten`
+      `Starte den Download neu, ggf. auch den Launcher`
     ]
   }
 ]
