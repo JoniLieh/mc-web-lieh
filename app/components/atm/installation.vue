@@ -31,10 +31,10 @@ const installationItems: installationItem[] = [
     title: "Stelle sicher, dass du einen Minecraft-Account besitzt und er mit deinem Microsoft-Account verknüpft ist.",
     subtitle: `(Hilfe dazu findest du auch <a href="/#installation">hier</a>)`
   }, {
-    title: "Habe <code>Java JDK 17</code> installiert",
+    title: "Habe <code>Java JDK 21</code> installiert",
     subtitle: `Findest du auch unter Downloads`
   }, {
-    title: "Downloade das Modpack und den Client",
+    title: "Downloade den Client",
   }, {
     title: "<i><b>(Portable)</b></i> Entpacke <code>PrismLauncher... .zip</code> wo du es wieder findest (zB. auf dem Desktop)",
     subtitle: `(Der <code>Windows-Explorer</code> kann mittlerweile Packen und Entpacken)`
