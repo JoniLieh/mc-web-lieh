@@ -1,89 +1,149 @@
 # mc-web-lieh
 
-Public Webpage to join the minecraft server
-[https://mc.joni.li](https://mc.joni.li)
+Public webpage to join the minecraft server  
+🌐 [https://mc.joni.li](https://mc.joni.li)
 
-## Setup on server
-> /usr/src/mc-web-lieh
-```
-# first creation
-docker network create --gateway 172.16.1.1 --subnet 172.16.1.0/24 frontend
+## 🏗️ Architecture
 
-# to update
-docker compose up -d --build --force-recreate
+This is a **statically generated Nuxt 3 application** served via nginx in Docker.
+
+### Routing Flow
 ```
-### check for same ip address(should be ok tho)
-> /etc/nginx/sites-enabled/mc.joni.li
-```
-location / {
-  proxy_pass http://127.0.0.1:30000/;
-}
+Internet (HTTPS) 
+  → Traefik (Port 443, TLS termination)
+    → mc.joni.li route
+      → localhost:30000
+        → Docker Container: nginx:alpine
+          → Static files (/usr/share/nginx/html)
 ```
 
-## Build Setup
+### Tech Stack
+- **Frontend**: Nuxt 3 + Vuetify 3 + TypeScript
+- **Build**: Bun + SSG (Static Site Generation)
+- **Server**: nginx:alpine (~15MB image)
+- **Deployment**: Docker + GitHub Actions
+- **Reverse Proxy**: Traefik (handles HTTPS)
+
+## 🚀 Setup on Server
+
+### Initial Setup
+Location: `/home/docker_user/mc-web-lieh`
+
+No custom network needed - uses default Docker bridge.
+
+### Traefik Configuration
+Ensure your Traefik config has:
+```yaml
+services:
+  nuxt-mc-web-lieh:
+    loadBalancer:
+      servers:
+        - url: "http://localhost:30000"
+```
+
+### Deployment
+Automatic via GitHub Actions on push to `main` branch.
+
+Manual deployment:
+```bash
+cd /home/docker_user/mc-web-lieh
+git pull origin main
+./deploy.sh
+```
+
+The `deploy.sh` script will:
+1. Stop old container
+2. Clean up networks and images
+3. Build new static site (via `bun run generate`)
+4. Start nginx container
+
+## 💻 Local Development
 
 ```bash
-# install dependencies
-$ npm install
+# Install dependencies
+bun install
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+# Development server with hot reload
+bun run dev
 
-# build for production and launch server
-$ npm run build
-$ npm run start
+# Generate static site (for production testing)
+bun run generate
 
-# generate static project
-$ npm run generate
+# Preview generated static site
+bun run preview
 ```
 
-For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
+## 🐳 Docker
 
-## Special Directories
+```bash
+# Build and run locally
+docker compose up -d --build
 
-You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
+# View logs
+docker compose logs -f
 
-### `assets`
+# Stop
+docker compose down
+```
 
-The assets directory contains your uncompiled assets such as Stylus or Sass files, images, or fonts.
+### Container Details
+- **Port Mapping**: `127.0.0.1:30000:80`
+- **Resource Limits**: 128MB RAM, 0.5 CPU
+- **Health Check**: Built-in nginx health check
+- **Image Size**: ~15MB (nginx:alpine + static files)
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/assets).
+## 📁 Project Structure
 
-### `components`
+```
+mc-web-lieh/
+├── app/
+│   ├── components/     # Vue components (vanilla, bmc, atm)
+│   ├── pages/          # Routes (auto-generated)
+│   ├── layouts/        # Layout templates
+│   ├── plugins/        # Vuetify, Pinia plugins
+│   ├── composables/    # Reusable composition functions
+│   ├── assets/         # SCSS, themes
+│   └── utils/          # Helper functions
+├── public/             # Static assets (images, robots.txt)
+├── Dockerfile          # Multi-stage build (bun + nginx)
+├── docker-compose.yml  # Container orchestration
+├── nuxt.config.ts      # Nuxt configuration
+└── deploy.sh           # Deployment script
+```
 
-The components directory contains your Vue.js components. Components make up the different parts of your page and can be reused and imported into your pages, layouts and even other components.
+## 🔧 Configuration
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/components).
+### Environment
+- **NODE_ENV**: `production` for builds
+- **Build Tool**: Bun (faster than npm/yarn)
+- **SSR**: Enabled during build, disabled in production (SSG)
 
-### `layouts`
+### Key Features
+- ✅ PWA Support (Progressive Web App)
+- ✅ Vuetify 3 (Material Design)
+- ✅ TypeScript
+- ✅ Auto-imports (composables, components)
+- ✅ Pinia (state management)
+- ✅ Security headers
+- ✅ Gzip compression
 
-Layouts are a great help when you want to change the look and feel of your Nuxt app, whether you want to include a sidebar or have distinct layouts for mobile and desktop.
+## 📚 Documentation
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
+- [Nuxt 3 Docs](https://nuxt.com/docs)
+- [Vuetify 3 Docs](https://vuetifyjs.com/)
+- [Bun Docs](https://bun.sh/docs)
 
+## 🐛 Troubleshooting
 
-### `pages`
+### Build fails with DNS errors
+The Dockerfile uses `network: host` during build to avoid DNS issues.
 
-This directory contains your application views and routes. Nuxt will read all the `*.vue` files inside this directory and setup Vue Router automatically.
+### Too many redirects
+Ensure nginx config has `absolute_redirect off` and `port_in_redirect off`.
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/get-started/routing).
+### Container won't start
+Check logs: `docker compose logs -f`
+Verify port 30000 is not already in use: `netstat -tuln | grep 30000`
 
-### `plugins`
-
-The plugins directory contains JavaScript plugins that you want to run before instantiating the root Vue.js Application. This is the place to add Vue plugins and to inject functions or constants. Every time you need to use `Vue.use()`, you should create a file in `plugins/` and add its path to plugins in `nuxt.config.js`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/plugins).
-
-### `static`
-
-This directory contains your static files. Each file inside this directory is mapped to `/`.
-
-Example: `/static/robots.txt` is mapped as `/robots.txt`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/static).
-
-### `store`
-
-This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+### Changes not visible
+Clear browser cache or use incognito mode (Service Worker might cache old version).
