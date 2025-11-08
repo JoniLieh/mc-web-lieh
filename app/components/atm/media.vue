@@ -12,6 +12,9 @@ interface carouselItem {
 
 const items: carouselItem[] = [
   {
+    src: "https://i.imgur.com/R8ydVnP.png"
+  },
+  {
     src: "https://media.forgecdn.net/attachments/983/81/2024-10-03_12.png"
   }, {
     src: "https://media.forgecdn.net/attachments/980/939/2024-10-02_23.png"
