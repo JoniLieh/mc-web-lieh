@@ -29,6 +29,15 @@ server {
     root /usr/share/nginx/html;
     index index.html;
 
+    # Trust proxy headers from Traefik
+    set_real_ip_from 172.17.0.0/16;
+    real_ip_header X-Forwarded-For;
+    real_ip_recursive on;
+
+    # Disable automatic redirects
+    absolute_redirect off;
+    port_in_redirect off;
+
     # Gzip compression
     gzip on;
     gzip_vary on;
@@ -43,7 +52,7 @@ server {
 
     # SPA fallback
     location / {
-        try_files $uri $uri/ /index.html;
+        try_files \$uri \$uri/ /index.html =404;
     }
 
     # Security headers
