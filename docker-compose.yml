@@ -5,11 +5,15 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile
+      network: host  # Fix DNS issues during build
     container_name: mc-web-lieh
     image: mc-web-lieh
     restart: unless-stopped
     ports:
       - 127.0.0.1:30000:80
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
     networks:
       - bridge
     # Minimal resources needed for nginx

@@ -1,14 +1,7 @@
 # syntax=docker/dockerfile:1
 
-# Build stage
-FROM node:lts-bullseye-slim AS builder
-
-RUN apt-get -y update \
-  && apt-get -y install curl \
-  && rm -rf /var/lib/apt/lists/*
-
-# Install bun
-RUN curl -fsSL https://bun.sh/install | bash
+# Build stage - using oven/bun directly (includes curl)
+FROM oven/bun:1-slim AS builder
 
 WORKDIR /app
 
@@ -16,14 +9,14 @@ WORKDIR /app
 COPY package.json bun.lock* ./
 
 # Install dependencies
-RUN /root/.bun/bin/bun install --frozen-lockfile
+RUN bun install --frozen-lockfile
 
 # Copy source code
 COPY . .
 
 # Generate static site
 ENV NODE_ENV=production
-RUN /root/.bun/bin/bun run generate
+RUN bun run generate
 
 # Production stage - super lightweight nginx
 FROM nginx:alpine
