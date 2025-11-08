@@ -1,5 +1,3 @@
-version: "3.7"
-
 services:
   mc-web-lieh:
     build: 
@@ -14,8 +12,7 @@ services:
     dns:
       - 8.8.8.8
       - 8.8.4.4
-    networks:
-      - bridge
+    network_mode: bridge  # Use default Docker bridge
     # Minimal resources needed for nginx
     deploy:
       resources:
@@ -31,8 +28,4 @@ services:
     #   - "traefik.http.routers.mc-web-lieh.rule=Host(`mc.joni.li`)"
     #   - "traefik.http.routers.mc-web-lieh.tls=true"
     #   - "traefik.http.services.mc-web-lieh.loadbalancer.server.port=80"
-
-networks:
-  bridge:
-    driver: bridge
       

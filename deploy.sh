@@ -2,7 +2,10 @@
 set -e
 
 echo "🛑 Stopping old container..."
-docker compose down || true
+docker compose down --remove-orphans || true
+
+echo "🧹 Cleaning up old networks..."
+docker network prune -f || true
 
 echo "🗑️ Removing old images..."
 docker image prune -f
