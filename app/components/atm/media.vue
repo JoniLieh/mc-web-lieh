@@ -1,5 +1,5 @@
 <template>
-  <v-carousel :height="imgHeight" show-arrows="hover" interval="2000" cycle hide-delimiter-background crossfade>
+  <v-carousel :height="imgHeight" show-arrows="hover" interval="2500" cycle hide-delimiter-background crossfade>
     <v-carousel-item v-for="({src, alt}, index) in items" :key="index" :src="src" :alt="alt" cover rounded></v-carousel-item>
   </v-carousel>
 </template>
