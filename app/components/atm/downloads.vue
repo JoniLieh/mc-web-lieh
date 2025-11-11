@@ -2,7 +2,7 @@
   <v-alert title="Downloads" icon="mdi-download" color="accent" border="start" variant="tonal">
     <ul>
       <li>
-        <a href="https://prismlauncher.org/download/" target="_blank">
+        <a href="https://prismlauncher.org/download/windows/" target="_blank">
           PrismLauncher Client Installer oder Portable <v-icon color="primary" end>mdi-link-variant</v-icon>
         </a>
       </li>

@@ -21,7 +21,9 @@
     <br>
 
     <v-alert icon="mdi-flash-alert" border="start" variant="tonal" color="deep-orange">
-      Aufgrund von dynamischer Sichtweite des Servers werden Mods wie <b>Distant Horizons</b> oder ähnliche sehr empfohlen.
+      Aufgrund von dynamischer Sichtweite des Servers werden Mods wie <b>Distant Horizons</b> oder ähnliche dringend empfohlen.
+      <br>
+      <a href="https://i.imgur.com/ye7frtj.png" target="_blank">Hilfe Bild</a>
     </v-alert>
     <br>
 

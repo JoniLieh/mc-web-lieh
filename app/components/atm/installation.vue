@@ -52,7 +52,8 @@ const installationItems: installationItem[] = [
     title: `Ändere noch die <code>RAM</code>-Zuweisung in den Einstellungen vom <code>PrismLauncher</code>, in der Regel die Hälfte von deinem totalen Arbeitsspeicher ich empfehle mind. 8GB.`,
     subtitle: `<a href="https://i.imgur.com/xIgWoQM.png" target="_blank">Hilfe Bild</a>`
   }, {
-    title: `Starte nun das Modpack indem du auf die hinzugefügt Instanz doppelklickst oder durch Auswahl und dann an der Seite auf <code>"Starten"</code>`
+    title: `Starte nun das Modpack indem du auf die hinzugefügte Instanz doppelklickst oder durch Auswahl und dann an der Seite auf <code>"Starten"</code>`,
+    subtitle: `Wie bereits oben erwähnt wird Distant Horizons dringend empfohlen <a href="https://i.imgur.com/ye7frtj.png" target="_blank">Hilfe Bild</a>`
   }, {
     title: `Ggf. änderst du noch Maus-, Tastatur- & Grafikeinstellungen in Minecraft, <b>F11 für Vollbildmodus</b>`
   }
