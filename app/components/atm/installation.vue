@@ -31,7 +31,7 @@ const installationItems: installationItem[] = [
     title: "Stelle sicher, dass du einen Minecraft-Account besitzt und er mit deinem Microsoft-Account verknüpft ist.",
     subtitle: `(Hilfe dazu findest du auch <a href="/#installation">hier</a>)`
   }, {
-    title: "Habe <code>Java JDK 21</code> installiert",
+    title: "Habe die neueste Version von <code>Java JDK</code> installiert",
     subtitle: `Findest du auch unter Downloads`
   }, {
     title: "Downloade den Client",

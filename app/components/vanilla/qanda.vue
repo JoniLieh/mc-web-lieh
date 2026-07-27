@@ -2,24 +2,25 @@
 <template>
   <div>
     <slot />
-    <v-expansion-panels multiple variant="popout">
+    <v-expansion-panels multiple variant="inset" class="mt-2">
       <v-expansion-panel
-        v-for="(item,i) in qanda"
+        v-for="(item, i) in qanda"
         :key="i"
+        class="rounded-xl border mb-2"
       >
-        <v-expansion-panel-title class="text-h6" expand-icon="mdi-help" disable-icon-rotate>
-          <template v-slot:actions>
-            <v-icon>
-              mdi-help
-            </v-icon>
+        <v-expansion-panel-title class="text-subtitle-1 font-weight-bold" expand-icon="mdi-chevron-down" collapse-icon="mdi-chevron-up">
+          <template #prepend>
+            <v-icon color="primary" class="mr-3">mdi-help-circle-outline</v-icon>
           </template>
           {{ item.question }}
         </v-expansion-panel-title>
+
         <v-expansion-panel-text>
           <v-alert
             color="info"
             border="start"
-            variant="tonal" 
+            variant="tonal"
+            class="rounded-lg text-body-2"
           >
             <div v-html="item.answer" />
           </v-alert>
@@ -41,7 +42,7 @@ export default {
           answer: 'Es ist ein Spiel: "Erkunde deine eigene, einzigartige Welt, überstehe die Nacht und erschaffe alles, was du dir vorstellen kannst!"'
         }, {
           question: 'Woher bekomme ich Minecraft?',
-          answer: 'Minecraft kannst unter folgendem Link kaufen: <a href="https://www.minecraft.net/de-de/get-minecraft">https://www.minecraft.net/de-de/get-minecraft</a>'
+          answer: 'Minecraft kannst unter folgendem Link kaufen: <a href="https://www.minecraft.net/de-de/get-minecraft" target="_blank">https://www.minecraft.net/de-de/get-minecraft</a>'
         }, {
           question: 'Gibt es Regeln?',
           answer: 'Ja, bitte schau im Regel-Abschnitt nach'
@@ -72,7 +73,7 @@ export default {
         }, {
           question: 'Ich habe einen Key, wo kann ich den aktivieren?',
           answer: `
-          Hier kannst du deinen Key aktivieren und mit deinem Microsoft-Konto verknüpfen: <a href="https://www.minecraft.net/de-de/redeem">https://www.minecraft.net/de-de/redeem</a>
+          Hier kannst du deinen Key aktivieren und mit deinem Microsoft-Konto verknüpfen: <a href="https://www.minecraft.net/de-de/redeem" target="_blank">https://www.minecraft.net/de-de/redeem</a>
           `
         }, {
           question: 'Ich brauche eine bestimmte Java-Version, wo bekomme ich die?',
@@ -81,7 +82,7 @@ export default {
           <br/>
           Wähle die gewünschte Version aus (höchstwahrscheinlich 21), das Betriebssystem (Windows, Linux, Mac) und anschließend den Installer.
           <br/>
-          Hier kannst du die Java-Version herunterladen: <a href="https://www.oracle.com/de/java/technologies/downloads/">Java Download</a>
+          Hier kannst du die Java-Version herunterladen: <a href="https://www.oracle.com/de/java/technologies/downloads/" target="_blank">Java Download</a>
           <br/>
           <a target="_blank" href="https://i.imgur.com/KxrIBGY.png">Hilfe Bild</a>
           <br/>
@@ -94,7 +95,7 @@ export default {
           answer: `
           Um zu sehen, welche Grafikkarte du hast, drücke die Tastenkombination "Windows-Taste + R" und gib "dxdiag" ein und klicke auf "Anzeige". Alternativ: Im Geräte-Manager.
           <br/>
-          Hier kannst du den neuesten Treiber für deine Grafikkarte herunterladen: <a href="https://www.nvidia.com/de-de/geforce/drivers/">Nvidia GameReady</a>, <a href="https://www.amd.com/de/support/download/drivers.html">AMD</a>
+          Hier kannst du den neuesten Treiber für deine Grafikkarte herunterladen: <a href="https://www.nvidia.com/de-de/geforce/drivers/" target="_blank">Nvidia GameReady</a>, <a href="https://www.amd.com/de/support/download/drivers.html" target="_blank">AMD</a>
           <br/>
           <a target="_blank" href="https://i.imgur.com/8p0Nsy6.png">Hilfe Bild</a>
           `

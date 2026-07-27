@@ -1,18 +1,30 @@
 <template>
   <div>
     <slot />
-    <v-list bg-color="transparent" density="comfortable">
-      <v-list-item v-for="(download, ruleIndex) in downloads" :key="ruleIndex" class="success--text text--darken-1" :href="download.link" target="_blank" link>
-        <template v-slot:prepend>
-          <v-icon color="primary" start>
-            mdi-file
-          </v-icon>
-        </template>
-        <v-list-item-title class="font-weight-bold">
-          {{ download.name }}<v-icon color="primary" size="small" end>mdi-open-in-new</v-icon>
-        </v-list-item-title>
-      </v-list-item>
-    </v-list>
+    <v-row dense class="mt-2">
+      <v-col v-for="(download, index) in downloads" :key="index" cols="12" sm="4">
+        <v-card
+          :href="download.link"
+          target="_blank"
+          variant="outlined"
+          class="rounded-xl border h-100"
+          hover
+          color="surface"
+        >
+          <v-card-item class="py-3">
+            <template #prepend>
+              <v-avatar color="primary" variant="tonal" size="36" class="mr-3">
+                <v-icon color="primary" size="20">mdi-download</v-icon>
+              </v-avatar>
+            </template>
+            <v-card-title class="text-subtitle-1 font-weight-bold text-primary d-flex align-center">
+              {{ download.name }}
+              <v-icon color="primary" size="x-small" class="ml-2">mdi-open-in-new</v-icon>
+            </v-card-title>
+          </v-card-item>
+        </v-card>
+      </v-col>
+    </v-row>
   </div>
 </template>
 

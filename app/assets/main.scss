@@ -1,13 +1,10 @@
 
-$family: "Open Sans", "Roboto", apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans,
-  Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+$family: "Plus Jakarta Sans", "Outfit", "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
 @use 'vuetify/settings' with (
   $body-font-family: $family,
   $heading-font-family: $family
 );
-
-// @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&display=swap');
 
 :root, h1, h2, h3, h4, h5, h6 {
   font-family: $family !important;
@@ -49,6 +46,55 @@ body {
 
 .d-block {
   display: block;
+}
+
+/* Fix text visibility in list items across dark and light themes */
+.v-list-item-title,
+.v-list-item-subtitle {
+  color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity, 0.87)) !important;
+  white-space: normal !important;
+}
+
+.v-theme--dark {
+  .v-list-item-title,
+  .v-list-item-subtitle {
+    color: rgba(255, 255, 255, 0.9) !important;
+  }
+}
+
+/* Ensure text fields, labels, placeholders and icons are crisp and visible */
+.v-field--variant-outlined {
+  .v-field__outline {
+    --v-field-border-opacity: 0.45 !important;
+    color: rgba(var(--v-theme-on-surface), 0.45) !important;
+  }
+  &:hover .v-field__outline {
+    --v-field-border-opacity: 0.85 !important;
+    color: rgba(var(--v-theme-primary), 0.85) !important;
+  }
+  &.v-field--focused .v-field__outline {
+    --v-field-border-opacity: 1 !important;
+  }
+}
+
+.v-field__input,
+.v-field__input input,
+.v-label.v-field-label,
+.v-field__prepend-inner .v-icon,
+.v-field__clearable .v-icon {
+  color: rgba(var(--v-theme-on-surface), 0.87) !important;
+  opacity: 1 !important;
+}
+
+.v-theme--dark {
+  .v-field__input,
+  .v-field__input input,
+  .v-label.v-field-label,
+  .v-field__prepend-inner .v-icon,
+  .v-field__clearable .v-icon {
+    color: rgba(255, 255, 255, 0.9) !important;
+    opacity: 1 !important;
+  }
 }
 
 .notes {

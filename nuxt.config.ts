@@ -19,7 +19,9 @@ const config: NuxtConfig = {
     head: {
       link: [
         { rel: 'icon', type: 'image/png', href: '/images/favicon.ico' },
-        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&display=swap' }
+        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&family=Montserrat:wght@400;600;700;900&display=swap' }
       ],
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
@@ -44,7 +46,7 @@ const config: NuxtConfig = {
   modules: [
     '@vite-pwa/nuxt',
     '@pinia/nuxt',
-    'nuxt-security',
+    // 'nuxt-security',
     // @ts-ignore
     async (_options, nuxt) => {
       nuxt.hooks.hook("vite:extendConfig", (config: any) =>
@@ -94,11 +96,8 @@ const config: NuxtConfig = {
   },
   
   security: {
-    headers: {
-      // load embedded images
-      contentSecurityPolicy: false,
-      crossOriginEmbedderPolicy: false
-    },
+    corsHandler: false,
+    headers: false
   },
 
   pwa: {

@@ -6,6 +6,8 @@ export const light: ThemeDefinition = {
   colors: {
     background: "#edf1f4",
     surface: "#FFFFFF",
+    'on-background': "#1c1b1f",
+    'on-surface': "#1c1b1f",
     primary: vuetifyColors.orange.darken2,
     secondary: vuetifyColors.grey.darken3,
     accent: vuetifyColors.teal.accent4,
@@ -19,8 +21,10 @@ export const light: ThemeDefinition = {
 export const dark: ThemeDefinition = {
   dark: true,
   colors: {
-    // background: "#edf1f4",
-    // surface: "#FFFFFF",
+    background: "#121212",
+    surface: "#1e1e1e",
+    'on-background': "#ffffff",
+    'on-surface': "#ffffff",
     primary: vuetifyColors.orange.darken2,
     secondary: vuetifyColors.grey.darken3,
     accent: vuetifyColors.teal.accent3,

@@ -5,31 +5,39 @@
 
     <client-only>
       <v-expansion-panels v-model="panel" multiple variant="inset">
-        <v-expansion-panel v-for="(item, i) in infos" :key="i">
-          <v-expansion-panel-title class="text-h6 primary-text" collapse-icon="mdi-server" expand-icon="mdi-server"
+        <v-expansion-panel v-for="(item, i) in infos" :key="i" class="rounded-xl border mb-2">
+          <v-expansion-panel-title class="text-h6 font-weight-bold" collapse-icon="mdi-server" expand-icon="mdi-server"
             disable-icon-rotate>
-            <span :class="item.isError ? 'text-error' : ''">
+            <span :class="item.isError ? 'text-error' : 'text-primary'">
               {{ item.heading }}
             </span>
           </v-expansion-panel-title>
+          
           <v-expansion-panel-text>
-            <v-alert v-if="!item.list" color="success" icon="mdi-web" border="start" variant="tonal" >
+            <v-alert v-if="!item.list" color="success" icon="mdi-web" border="start" variant="tonal" class="rounded-lg">
               <div v-html="item.answer" />
             </v-alert>
 
-            <v-list v-else density="compact">
-              <v-list-item v-for="(listItem, itemIndex) in item.list" :key="itemIndex + 1 * 100">
-                <template v-slot:prepend>
-                  <div class="text-right">
-                    <v-icon v-if="item.isUl" start>mdi-circle-small</v-icon>
-                    <span v-else class="mr-5">
-                      {{ itemIndex + 1 }}.
-                    </span>
-                  </div>
-                </template>
-                <v-list-item-title class="d-block" v-html="listItem"></v-list-item-title>
-              </v-list-item>
-            </v-list>
+            <!-- Pixel-perfect aligned list grid -->
+            <div v-else class="aligned-list py-1">
+              <div 
+                v-for="(listItem, itemIndex) in item.list" 
+                :key="itemIndex"
+                class="d-flex align-baseline py-2 border-b-subtle"
+              >
+                <div v-if="item.isUl" class="text-right mr-3" style="width: 32px; min-width: 32px;">
+                  <v-icon color="primary" size="small">mdi-link-variant</v-icon>
+                </div>
+                <div 
+                  v-else 
+                  class="text-right font-weight-bold text-medium-emphasis mr-3 text-body-1" 
+                  style="width: 32px; min-width: 32px;"
+                >
+                  {{ itemIndex + 1 }}.
+                </div>
+                <div class="flex-grow-1 text-body-1" v-html="listItem"></div>
+              </div>
+            </div>
           </v-expansion-panel-text>
         </v-expansion-panel>
       </v-expansion-panels>
@@ -57,40 +65,53 @@ export default {
         //   isUl: true
         // },
         {
-          heading: 'Server-Adresse',
-          answer: 'joni.li'
-        },
-        {
-          heading: 'Besonderes',
+          heading: 'Server-Informationen',
           list: [
-            'Skills, Leveling und Super Fähigkeiten!',
-            // 'Es gibt eine Kreativ-Welt, wo ihr euch austoben könnt :)',
-            'Für Whitelist, bitte mich anschreiben!',
-            'Interaktive Live Karte'
+            '<b>Server-Name:</b> Vanilla+ RPG Survival',
+            '<b>Server IP:</b> <code>joni.li</code>',
+            '<b>Minecraft-Version:</b> PaperMC 26.2 (26.2+)'
           ]
         },
         {
-          heading: 'Plugins',
+          heading: 'Wartung & Neustarts',
+          list: [
+            '<b>Neustarts & Backups:</b> Alle 12 Stunden (00:00 Uhr & 12:00 Uhr)',
+            '<b>Warnung:</b> 60 Sekunden Vorwarnung ingame',
+            '<b>Backups:</b> 7 Tage Rolling Backups'
+          ]
+        },
+        {
+          heading: 'Besonderes & Features',
+          list: [
+            'Spieler-Handel & Villager-Trading',
+            'Skills, Leveling und Fähigkeiten (AuraSkills ab Level 6)',
+            'Dungeons & Ruinen (BetterStructures)',
+            'Visuelle Mob-Lebensbalken (HealthBar)',
+            'Quality of Life: GSit, ClickVillagers, HarvestMaster, AxGraves, 1-Player Sleep',
+            'Interaktive Live-Karte'
+          ]
+        },
+        {
+          heading: 'Installierte Plugins',
           list: [
             'AuraSkills',
-            'EssentialsX',
-            'GeyserMC for Bedrock',
-            'Graves',
+            'AxGraves',
+            'BetterStructures',
+            'ClickVillagers',
+            'EssentialsC',
             'GSit',
-            'SilkSpawners',
-            'Sleep-Most'
-            // 'McMMO',
-            // 'Multiverse',
-            // 'WorldEdit',
-            // 'WorldGuard',
+            'HarvestMaster',
+            'HealthBar',
+            'ViaBackwards',
+            'ViaVersion'
           ]
         }, {
-          heading: 'Nützliches',
+          heading: 'Nützliche Links',
           list: [
             '<a href="https://minecraft.fandom.com/de/wiki/Minecraft_Wiki" target="_blank">Minecraft Wiki</a>',
             '<a href="https://minecraft.tools/de" target="_blank">Minecraft Tools - Nützliche MC Werkzeuge</a>',
             // '<a href="https://mcmmo.fandom.com/wiki/Befehle_in_deutscher_Sprache" target="_blank">McMMO Chat Befehle</a>',
-            '<a href="https://wiki.aurelium.dev/auraskills" target="_blank">AuraSkills</a>',
+            '<a href="https://wiki.aurelium.dev/auraskills" target="_blank">AuraSkills Wiki</a>',
           ],
           isUl: true
         }
@@ -99,3 +120,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.border-b-subtle:not(:last-child) {
+  border-bottom: 1px dashed rgba(var(--v-border-color), var(--v-border-opacity, 0.12));
+}
+</style>

@@ -1,18 +1,20 @@
 <template>
   <div>
     <slot />
-    <v-list bg-color="transparent" density="compact">
-      <v-list-item v-for="(rule, ruleIndex) in rules" :key="ruleIndex" class="success--text text--darken-1" link>
-        <template v-slot:prepend>
-          <v-icon color="primary" start>
-            mdi-star
-          </v-icon>
-        </template>
-        <v-list-item-title>
-          {{ rule }}
-        </v-list-item-title>
-      </v-list-item>
-    </v-list>
+    <v-card variant="outlined" class="rounded-xl border mt-2">
+      <v-list bg-color="transparent" density="comfortable">
+        <v-list-item v-for="(rule, ruleIndex) in rules" :key="ruleIndex" class="py-2">
+          <template #prepend>
+            <v-avatar color="primary" variant="tonal" size="28" class="mr-3">
+              <v-icon color="primary" size="16">mdi-shield-check</v-icon>
+            </v-avatar>
+          </template>
+          <div class="text-body-1 font-weight-medium">
+            {{ rule }}
+          </div>
+        </v-list-item>
+      </v-list>
+    </v-card>
   </div>
 </template>
 

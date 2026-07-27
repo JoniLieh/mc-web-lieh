@@ -36,19 +36,19 @@ export default defineNuxtPlugin((app) => {
       // global: {
       //   rounded: "lg",
       // }
-      VTextField: {
-        color: "secondary",
-        rounded: "lg"
-      },
-      VCheckbox: {
-        color: "secondary",
-      },
-      VCheckboxBtn: {
-        color: "secondary",
-      },
-      VSwitch: {
-        color: "secondary",
-      },
+      // VTextField: {
+      //   color: "secondary",
+      //   rounded: "lg"
+      // },
+      // VCheckbox: {
+      //   color: "secondary",
+      // },
+      // VCheckboxBtn: {
+      //   color: "secondary",
+      // },
+      // VSwitch: {
+      //   color: "secondary",
+      // },
       VMenu: {
         openOnClick: true, // for touch devices
       },
@@ -58,44 +58,44 @@ export default defineNuxtPlugin((app) => {
       // VAppBar: {
       //   density: 'compact'
       // },
-      VBtn: {
-        rounded: "lg",
-        color: "theme-variant"
-      },
-      VBtnToggle: {
-        rounded: "lg"
-      },
-      VListItem: {
-        rounded: "lg"
-      },
-      VAvatar: {
-        rounded: "lg"
-      },
-      VBtnGroup: {
-        rounded: "lg"
-      },
-      VAppBar: {
-        rounded: "0"
-      },
-      VSystemBar: {
-        rounded: "0"
-      },
-      VFooter: {
-        rounded: "0"
-      },
-      VToolbar: {
-        rounded: "true"
-      },
-      VImg: {
-        rounded: "0"
-      },
-      VTabs: {
-        selectedClass: 'font-weight-bold',
-        // rounded: "lg"
-      },
-      VTab: {
-        rounded: "0"
-      }
+      // VBtn: {
+      //   rounded: "lg",
+      //   color: "theme-variant"
+      // },
+      // VBtnToggle: {
+      //   rounded: "lg"
+      // },
+      // VListItem: {
+      //   rounded: "lg"
+      // },
+      // VAvatar: {
+      //   rounded: "lg"
+      // },
+      // VBtnGroup: {
+      //   rounded: "lg"
+      // },
+      // VAppBar: {
+      //   rounded: "0"
+      // },
+      // VSystemBar: {
+      //   rounded: "0"
+      // },
+      // VFooter: {
+      //   rounded: "0"
+      // },
+      // VToolbar: {
+      //   rounded: "true"
+      // },
+      // VImg: {
+      //   rounded: "0"
+      // },
+      // VTabs: {
+      //   selectedClass: 'font-weight-bold',
+      //   // rounded: "lg"
+      // },
+      // VTab: {
+      //   rounded: "0"
+      // }
     }
 
   })
