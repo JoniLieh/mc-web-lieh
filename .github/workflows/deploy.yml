@@ -17,7 +17,7 @@ jobs:
       - name: SSH into server and run commands
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: 152.53.239.250
+          host: 152.53.162.64
           port: 2222
           username: docker_user
           key: ${{ secrets.SSH_PRIVATE_KEY_DOCKER_USER }}
