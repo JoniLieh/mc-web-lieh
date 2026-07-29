@@ -74,9 +74,6 @@
             <div class="text-subtitle-1 font-weight-bold text-truncate">
               {{ serverVersion }}
             </div>
-            <div class="text-caption text-medium-emphasis mt-1">
-              Java & Bedrock Crossplay
-            </div>
           </v-card>
         </v-col>
 
