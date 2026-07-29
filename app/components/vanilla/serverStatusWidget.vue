@@ -80,11 +80,11 @@
           </v-card>
         </v-col>
 
-        <!-- Stat 3: Server IP Copy Box -->
+        <!-- Stat 3: Server Adresse Copy Box -->
         <v-col cols="12" sm="4">
           <v-card variant="tonal" color="success" class="pa-3 rounded-lg h-100 border d-flex flex-column justify-space-between">
             <div class="d-flex align-center justify-space-between mb-1">
-              <span class="text-caption font-weight-bold text-uppercase">Server IP</span>
+              <span class="text-caption font-weight-bold text-uppercase">Server-Adresse</span>
               <v-icon size="small">mdi-link-variant</v-icon>
             </div>
             <div class="d-flex align-center justify-space-between mt-1">
@@ -146,7 +146,7 @@
     <!-- Copy notification Snackbar -->
     <v-snackbar v-model="showSnackbar" timeout="2000" color="success">
       <v-icon class="mr-2">mdi-check-circle</v-icon>
-      IP "joni.li" in Zwischenablage kopiert!
+      Server-Adresse "joni.li" in Zwischenablage kopiert!
     </v-snackbar>
   </v-card>
 </template>

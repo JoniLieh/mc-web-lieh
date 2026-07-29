@@ -68,16 +68,16 @@ export default {
           heading: 'Server-Informationen',
           list: [
             '<b>Server-Name:</b> Vanilla+ RPG Survival',
-            '<b>Server IP:</b> <code>joni.li</code>',
+            '<b>Server-Adresse:</b> <code>joni.li</code>',
             '<b>Minecraft-Version:</b> PaperMC 26.2 (26.2+)'
           ]
         },
         {
           heading: 'Wartung & Neustarts',
           list: [
-            '<b>Neustarts & Backups:</b> Alle 12 Stunden (00:00 Uhr & 12:00 Uhr)',
+            '<b>Neustarts & Backups:</b> Alle 6 Stunden (00:00, 06:00, 12:00 & 18:00 Uhr)',
             '<b>Warnung:</b> 60 Sekunden Vorwarnung ingame',
-            '<b>Backups:</b> 7 Tage Rolling Backups'
+            '<b>Backups:</b> Automatische 6-Stunden Backups (00:00, 06:00, 12:00, 18:00 Uhr)'
           ]
         },
         {
@@ -85,6 +85,7 @@ export default {
           list: [
             'Spieler-Handel & Villager-Trading',
             'Skills, Leveling und Fähigkeiten (AuraSkills ab Level 6)',
+            'Veinminer Verzauberung (Spitzhacken ab Level 30+)',
             'Dungeons & Ruinen (BetterStructures)',
             'Visuelle Mob-Lebensbalken (HealthBar)',
             'Quality of Life: GSit, ClickVillagers, HarvestMaster, AxGraves, 1-Player Sleep',

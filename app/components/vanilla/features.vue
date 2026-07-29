@@ -106,11 +106,12 @@ export default {
         icon: 'mdi-sword-cross',
         color: 'primary',
         skills: ['Bergbau', 'Holzfällen', 'Landwirtschaft', 'Kampf', 'Bogenschießen', 'Ausgrabung', 'Angeln', 'Gewandtheit', 'Verzauberung', 'Alchemie'],
-        itemsTitle: 'Aktive Fähigkeiten (ab Skill-Level 6)',
+        itemsTitle: 'Fähigkeiten & Verzauberungen',
         items: [
-          { name: 'Treecapitator', skill: 'Holzfällen', effect: 'Fällt ganze Bäume auf einmal', icon: 'mdi-axe' },
-          { name: 'Speed Mine', skill: 'Bergbau', effect: 'Kurzer Haste X Boost', icon: 'mdi-pickaxe' },
-          { name: 'Replenish', skill: 'Landwirtschaft', effect: 'Pflanzt geerntete Pflanzen automatisch nach', icon: 'mdi-sprout' }
+          { name: 'Veinminer', skill: 'Verzauberung ab Level 30+', effect: 'Baut zusammenhängende Blöcke mit der Spitzhacke ab', icon: 'mdi-pickaxe' },
+          { name: 'Treecapitator', skill: 'Holzfällen ab Level 6', effect: 'Fällt ganze Bäume auf einmal', icon: 'mdi-axe' },
+          { name: 'Speed Mine', skill: 'Bergbau ab Level 6', effect: 'Kurzer Haste X Boost', icon: 'mdi-pickaxe' },
+          { name: 'Replenish', skill: 'Landwirtschaft ab Level 6', effect: 'Pflanzt geerntete Pflanzen automatisch nach', icon: 'mdi-sprout' }
         ]
       },
       {

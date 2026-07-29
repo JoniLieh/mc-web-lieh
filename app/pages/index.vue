@@ -25,6 +25,9 @@
     <!-- Live Server Status Widget -->
     <ServerStatusWidget />
 
+    <!-- PrismLauncher Quickstart Section (Before Gliederung) -->
+    <QuickstartComponent id="quickstart" class="mb-6" />
+
     <!-- Table of Contents Section -->
     <div class="d-flex align-center flex-wrap justify-space-between my-6 ga-4">
       <div class="d-flex align-center">
@@ -84,7 +87,7 @@
     </v-row>
     
     <!-- Dynamic Component Sections -->
-    <section v-for="(item, index) in tableOfContent" :key="index">
+    <section v-for="(item, index) in dynamicSections" :key="index">
       <v-divider class="my-6" />
       
       <KeepAlive>
@@ -103,6 +106,7 @@
 import { ref, computed } from 'vue'
 import { useDisplay } from 'vuetify'
 import ServerStatusWidget from '~/components/vanilla/serverStatusWidget.vue'
+import QuickstartComponent from '~/components/vanilla/quickstart.vue'
 
 const { mobile } = useDisplay()
 const tocSearch = ref('')
@@ -117,6 +121,7 @@ const stripHtml = (html) => {
 </script>
 
 <script type="ts">
+import QuickstartComponent from '~/components/vanilla/quickstart.vue'
 import QuestionsAndAnswersComponent from '~/components/vanilla/qanda.vue'
 import RulesComponent from '~/components/vanilla/rules.vue'
 import InstallationComponent from '~/components/vanilla/installation.vue'
@@ -133,6 +138,11 @@ export default {
   data: () => ({
     tableOfContent: [
       {
+        heading: 'Schnellstart',
+        headingIcon: 'mdi-rocket-launch-outline',
+        link: '#quickstart',
+        component: shallowRef(QuickstartComponent)
+      }, {
         heading: 'Features & Skills',
         headingIcon: 'mdi-star-outline',
         link: '#features',
@@ -190,6 +200,9 @@ export default {
         const title = (item.headingStructure || item.heading || '').toLowerCase()
         return title.includes(q)
       })
+    },
+    dynamicSections() {
+      return this.tableOfContent.filter(item => item.link !== '#quickstart')
     }
   }
 }

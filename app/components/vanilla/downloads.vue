@@ -36,8 +36,8 @@ const downloads = [
     link: 'https://prismlauncher.org/download/'
   },
   {
-    name: 'Minecraft-Instanzen',
-    link: 'https://www.dropbox.com/scl/fo/me0c00s1k7m53hbvm1yje/h?rlkey=4nhi8ybtofrv3qjr6noycpfjo&dl=0'
+    name: 'Minecraft-Instanz',
+    link: 'https://www.dropbox.com/scl/fi/57eg7xp02acifv6ilybuw/26.2_2026.zip?rlkey=dqvg1xuii5vi3dtq9dyoe0cgl&st=yke5o5l9&dl=0'
   },
   {
     name: 'Java JDK',

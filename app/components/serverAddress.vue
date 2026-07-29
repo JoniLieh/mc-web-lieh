@@ -12,7 +12,7 @@
         prepend-icon="mdi-content-copy"
         @click="copy('joni.li')"
       >
-        IP kopieren
+        Adresse kopieren
       </v-btn>
     </div>
   </v-alert>

@@ -45,7 +45,7 @@ export default {
   data: () => ({
     links: [
       {
-        text: "Allgemein",
+        text: "Vanilla",
         link: "/",
         icon: "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/logos/Homepage_Gameplay-Trailer_MC-OV-logo_300x300.png"
       }, 
