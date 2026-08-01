@@ -32,7 +32,7 @@ export default {
       'Belästigung anderer Spieler im Chat, sowie auch andersweitig ist untersagt',
       // 'Kein Spam oder Werbung im Chat',
       'Industrielle Bauten bitte verschönern bspw. Mobfarmen',
-      'Keine Verwendung von Hack Clients oder das Ausnutzen von Glitches / Bugs',
+      'Keine Verwendung von Hack Clients oder das Ausnutzen von Glitches / Bugs. (Auto Angel Mod ist aber erlaubt :))',
       'Die Serverleitung übernimmt keine Haftung für von Spielern begangene Taten',
       'Verstoß gegen die Regeln kann zum Serverauschluss führen',
       // 'Bitte Möglichkeit für andere Spieler geben den Enderdrachen gemeinsam zu besiegen',
