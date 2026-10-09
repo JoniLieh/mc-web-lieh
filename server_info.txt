@@ -11,3 +11,4 @@ Jo, hier die Infos zum Server:
 - QoL (Sitzen, ClickVillagers, Gräber beim Tod)
 
 Alles Weitere und die Anleitung gibt's auf https://mc.joni.li
+ 
