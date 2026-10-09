@@ -2,7 +2,7 @@
   <div>
     <slot />
 
-    <v-card href="https://mc.joni.li/map/" target="_blank" class="mb-2 rounded-xl border elevation-2" hover color="surface">
+    <v-card href="https://map.mc.joni.li" target="_blank" class="mb-2 rounded-xl border elevation-2" hover color="surface">
       <client-only>
         <!-- https://imgur.com/a/Ztq2MIv -->
         <v-img src="https://i.imgur.com/1YLB4fK.png" cover max-height="500px" />
