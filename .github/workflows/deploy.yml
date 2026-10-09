@@ -1,35 +1,35 @@
-name: Deploy to Root Server
+# name: Deploy to Root Server
 
-on:
-  push:
-    branches:
-      - main
-  workflow_dispatch: # Manual trigger option
+# on:
+#   push:
+#     branches:
+#       - main
+#   workflow_dispatch: # Manual trigger option
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+#     steps:
+#       - name: Checkout Repository
+#         uses: actions/checkout@v4
 
-      - name: SSH into server and run commands
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: 152.53.162.64
-          port: 2222
-          username: docker_user
-          key: ${{ secrets.SSH_PRIVATE_KEY_DOCKER_USER }}
-          passphrase: ${{ secrets.SSH_PRIVATE_KEY_DOCKER_USER_PASSPHRASE }}
-          command_timeout: 30m
-          script: |
-            set -e
-            echo "🔄 Pulling latest changes..."
-            cd /home/docker_user/mc-web-lieh
-            git pull origin main
+#       - name: SSH into server and run commands
+#         uses: appleboy/ssh-action@v1.0.3
+#         with:
+#           host: 152.53.162.64
+#           port: 2222
+#           username: docker_user
+#           key: ${{ secrets.SSH_PRIVATE_KEY_DOCKER_USER }}
+#           passphrase: ${{ secrets.SSH_PRIVATE_KEY_DOCKER_USER_PASSPHRASE }}
+#           command_timeout: 30m
+#           script: |
+#             set -e
+#             echo "🔄 Pulling latest changes..."
+#             cd /home/docker_user/mc-web-lieh
+#             git pull origin main
             
-            echo "🐳 Building and deploying..."
-            ./deploy.sh
+#             echo "🐳 Building and deploying..."
+#             ./deploy.sh
             
-            echo "✅ Deployment completed successfully!"
+#             echo "✅ Deployment completed successfully!"

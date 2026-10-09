@@ -1,0 +1,13 @@
+Jo, hier die Infos zum Server:
+
+*IP:* `joni.li`
+*Webseite:* https://mc.joni.li (PaperMC 26.2)
+
+*Kurzer Teaser:*
+- RPG Skills & Leveling (AuraSkills)
+- Veinminer ab Level 30
+- Neue Dungeons & Ruinen
+- Interaktive Live-Karte
+- QoL (Sitzen, ClickVillagers, Gräber beim Tod)
+
+Alles Weitere und die Anleitung gibt's auf https://mc.joni.li
